@@ -1,0 +1,13 @@
+<h1><%= @category.name %> Transactions</h1>
+
+<h2>Total Amount: <%= @category.deals.sum(:amount) %></h2>
+
+<% @deals.each do |deal| %>
+  <div>
+    <strong><%= deal.name %></strong>
+    <span>Amount: <%= deal.amount %></span>
+  </div>
+<% end %>
+
+<%= link_to "Add a new transaction", new_category_deal_path(@category) %>
+<%= link_to "Back", categories_path %>

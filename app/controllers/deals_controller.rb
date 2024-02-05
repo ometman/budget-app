@@ -13,13 +13,14 @@ class DealsController < ApplicationController
     end
   
     def create
-      @deal = current_user.deals.build(deal_params)
-      if @deal.save
-        redirect_to @deal, notice: 'Deal was successfully created.'
-      else
-        render :new
+        @deal = @category.deals.build(deal_params)
+        if @deal.save
+          redirect_to category_deals_path(@category), notice: 'Deal was successfully created.'
+        else
+          render :new
+        end
       end
-    end
+      
   
     def edit
     end
