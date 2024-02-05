@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  
+
   get 'categories/Deals'
   get 'home', to: 'pages#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   root "pages#index"
 
   resources 'users'
+  resources 'categories'
+  resources 'deals'
+  
+
 
 end
