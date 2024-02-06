@@ -1,0 +1,60 @@
+/* login.css */
+
+/* Form Container */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Fields */
+  .login-container .field {
+    margin-bottom: 15px;
+  }
+  
+  /* Submit Button */
+  .login-container .actions {
+    text-align: center;
+  }
+  
+  .login-container input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Remember Me Checkbox */
+  .login-container .field.checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-container .field.checkbox label {
+    margin-left: 5px;
+  }
+  
+  /* Links Section */
+  .login-container .links {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .login-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-container a:hover {
+    text-decoration: underline;
+  }
+  
