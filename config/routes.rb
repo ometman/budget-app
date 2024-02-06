@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 # Defines the root path route ("/")
   root "home#index"
   get '/home', to: 'home#index', as: :home
+  # get '/users/sign_out', to: 'home#index', as: :logout
+
 
 
   devise_for :users, path: 'auth', path_names: {

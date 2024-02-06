@@ -2,7 +2,7 @@
 
 <h2 class="login-heading">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container' }) do |f| %>
   <div class="field login-field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'login-input' %>

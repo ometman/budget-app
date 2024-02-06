@@ -11,16 +11,16 @@
   }
   
   /* Form Fields */
-  .login-container .field {
+  .login-container login.field {
     margin-bottom: 15px;
   }
   
   /* Submit Button */
-  .login-container .actions {
+  .login-container login.actions {
     text-align: center;
   }
   
-  .login-container input[type="submit"] {
+  .login-container login.input[type="submit"] {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -29,22 +29,22 @@
     cursor: pointer;
   }
   
-  .login-container input[type="submit"]:hover {
+  .login-container login.input[type="submit"]:hover {
     background-color: #0056b3;
   }
   
   /* Remember Me Checkbox */
-  .login-container .field.checkbox {
+  .login-container login.field.checkbox {
     display: flex;
     align-items: center;
   }
   
-  .login-container .field.checkbox label {
+  .login-container login.field.checkbox label {
     margin-left: 5px;
   }
   
   /* Links Section */
-  .login-container .links {
+  .login-container login.links {
     margin-top: 15px;
     text-align: center;
   }
