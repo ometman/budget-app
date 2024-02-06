@@ -1,5 +1,5 @@
 <!-- Modified Log In Form with Class Names -->
-
+<div class="login-container">
 <h2 class="login-heading">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container' }) do |f| %>
@@ -26,3 +26,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

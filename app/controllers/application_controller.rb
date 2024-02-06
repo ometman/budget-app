@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # path after sign out
-  def after_sign_out_path_for(resource_or_scope)
+  def after_sign_out_path_for(_resource_or_scope)
     root_path || home_path # Redirect to home page after sign out
   end
 
@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
 
   # Configure permitted parameters for Devise sign-up
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name email password])
   end
 end
