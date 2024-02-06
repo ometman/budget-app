@@ -1,0 +1,11 @@
+<h1>Your Categories</h1>
+
+<% @categories.each do |category| %>
+  <div>
+    <%= image_tag category.icon.variant(resize: "100x100") if category.icon.attached? %>
+    <%= link_to category.name, category_path(category) %>
+    <span>Total Amount: <%= category.deals.sum(:amount) %></span>
+  </div>
+<% end %>
+
+<%= link_to "Add a new category", new_category_path %>
