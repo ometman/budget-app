@@ -1,0 +1,11 @@
+<h1><%= @category.name %></h1>
+
+<%= image_tag @category.icon.variant(resize: "200x200") if @category.icon.attached? %>
+
+<h2>Total Amount: <%= @category.deals.sum(:amount) %></h2>
+
+<%= link_to "Back to Categories", categories_path %>
+<%= link_to "Edit Category", edit_category_path(@category) %>
+<%= link_to "Delete Category", @category, method: :delete, data: { confirm: "Are you sure?" } %>
+
+<%= link_to "View Transactions", category_deals_path(@category) %>

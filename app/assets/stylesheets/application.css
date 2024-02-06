@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin and padding reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* List reset */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Form elements reset */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* Anchor reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset some default styles for better consistency */
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Basic styling for the entire page */
+.container {
+  max-width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Navigation styling */
+nav {
+  background-color: #555;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Main content styling */
+main {
+  padding: 20px 0;
+}
+
+/* Article styling */
+article {
+  margin-bottom: 20px;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive design - adjust styles based on screen size */
+@media screen and (max-width: 768px) {
+  /* Adjust the styles for smaller screens here */
+  header {
+    font-size: 1.5em;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Additional styles for screens with a maximum width of 280px */
+@media screen and (max-width: 280px) {
+  /* Adjust styles for screens with a maximum width of 280px here */
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 5px;
+    font-size: 1.2em;
+  }
+
+  nav a {
+    padding: 8px;
+  }
+
+  article {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    padding: 5px;
+  }
+}
