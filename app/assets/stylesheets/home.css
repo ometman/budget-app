@@ -2,7 +2,7 @@ header {
   height: 20vh;
 }
 
-main {
+main.home {
   height: 75vh;
   flex-direction: row;
   justify-content: center;
@@ -21,9 +21,24 @@ footer {
   align-items: center;
 }
 
+a.home-signup-btn,
+a.home-login-btn {
+  text-align: center;
+  padding-top: 6%;
+  background-color: #f3f3f3; 
+  width: 40vw;
+  height: 12vh;
+}
+
+a.home-signup-btn:hover, 
+a.home-login-btn:hover {
+  background-color: #3778c2;
+  color: #fff;
+}
+
 .home-signup-btn,
 .home-login-btn {
-  background-color: medium-gray; 
+  background-color: #f3f3f3; 
   border: none;
   width: 40vw;
   height: 12vh;
@@ -35,12 +50,6 @@ footer {
   transition: background-color 0.3s ease;
   border: none;
   text-decoration: none;
-}
-
-.home-signup-btn:hover, 
-.home-login-btn:hover {
-  background-color: #3778c2;
-  color: #fff;
 }
 
 @media screen and ( max-width: 280px) {

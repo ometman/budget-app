@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 # Defines the root path route ("/")
   root "home#index"
   get '/home', to: 'home#index', as: :home
-  # get '/users/sign_out', to: 'home#index', as: :logout
-
-
 
   devise_for :users, path: 'auth', path_names: {
     sign_in: 'login',
@@ -24,13 +21,8 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  
-
-
   resources 'users'
   resources 'categories'
   resources 'deals'
   
-
-
 end
