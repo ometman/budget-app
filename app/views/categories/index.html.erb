@@ -1,5 +1,7 @@
+<header>
 <h1>Your Categories</h1>
-
+</header>
+<main>
 <% @categories.each do |category| %>
   <div>
     <%= image_tag category.icon.variant(resize: "100x100") if category.icon.attached? %>
@@ -9,3 +11,4 @@
 <% end %>
 
 <%= link_to "Add a new category", new_category_path %>
+</main>

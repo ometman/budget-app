@@ -1,0 +1,54 @@
+header {
+  height: 20vh;
+}
+
+main {
+  height: 75vh;
+  flex-direction: row;
+  justify-content: center;
+  color: #434b54;
+}
+
+footer {
+  height: 5vh;
+}
+
+.home-action-btns {
+  gap: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-signup-btn,
+.home-login-btn {
+  background-color: medium-gray; 
+  border: none;
+  width: 40vw;
+  height: 12vh;
+  margin: 0 auto;   
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.home-signup-btn:hover, 
+.home-login-btn:hover {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+@media screen and ( max-width: 280px) {
+  .home-signup-btn,
+  .home-login-btn {
+    width: 60vw;
+    height: 10vh;
+  }
+}
+
+  

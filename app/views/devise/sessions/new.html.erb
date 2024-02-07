@@ -1,7 +1,8 @@
-<!-- Modified Log In Form with Class Names -->
+<header>
 <div class="login-container">
 <h2 class="login-heading">Log in</h2>
-
+</header>
+<main>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container' }) do |f| %>
   <div class="field login-field">
     <%= f.label :email %><br />
@@ -27,3 +28,4 @@
 
 <%= render "devise/shared/links" %>
 </div>
+<main>
