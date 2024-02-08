@@ -4,6 +4,10 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = current_user.categories
+    @recent_categories = Category.most_recent
+    @oldest_categories = Category.oldest
+    @three_recent_categories = Category.three_most_recent
+    @three_oldest_categories = Category.three_oldest
   end
 
   def show; end
