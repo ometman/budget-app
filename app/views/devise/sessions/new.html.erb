@@ -1,8 +1,10 @@
-<header>
-<h1>Ometman Budget App</h1>
-<p>Welcome!! Login or Register to use</p>
+<header class="auth">
+  <div class="main-header-col">
+    <h1>Ometman Budget App</h1>
+    <p>Welcome!! Login or Register to use</p>
+  </div>
 </header>
-<main>
+<main class="auth">
 <h2 class="login-heading"> Log in </h2>
   <div class="login-container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container-form' }) do |f| %>

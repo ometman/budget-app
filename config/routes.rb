@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
 # Defines the root path route ("/")
-  root "home#index"
-  get '/home', to: 'home#index', as: :home
-  # get '/categories', to: 'categories#index', as: :categories
-
+  root "splash#index"
+  get '/home', to: 'categories#index', as: :categories
+  get '/categories/most_recent', to: 'categories#most_recent', as: :most_recent_categories
+  get '/categories/oldest', to: 'categories#oldest', as: :oldest_categories
 
   devise_for :users, path: 'auth', path_names: {
     sign_in: 'login',

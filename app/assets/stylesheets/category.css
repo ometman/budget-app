@@ -1,9 +1,14 @@
+header.categories {
+    height: 16vh;
+}
+
 main.categories {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: #f3f3f3;
+    height: 83vh;
   }
   
 /* Gift Info */
@@ -100,4 +105,14 @@ main.categories {
     background-color: green;
     border: 1px solid #fff;
   }
+
+ .no-category-msg {
+    text-align: center;
+    font-size: 16px;
+    color: red;
+  }
   
+.recent-old-cat-links {
+    text-align: right;
+    margin-right: 0;
+  }

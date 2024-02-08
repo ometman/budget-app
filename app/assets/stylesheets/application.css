@@ -87,7 +87,20 @@ body {
 header {
   background-color: #3778c2;
   color: #fff;
-  text-align: center;
+  padding: 20px;
+}
+
+.main-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
