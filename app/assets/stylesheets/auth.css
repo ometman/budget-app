@@ -22,17 +22,14 @@ main {
   justify-content: center;
   max-width: 400px;
   width: 100%;
-  margin: 0 auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-}
-
-.login-container,
-.signup-container {
-  margin: 5% auto;
+  color: #434b54;
+  text-decoration: none;
 }
 
 /* Form Fields */
@@ -41,7 +38,7 @@ main {
   margin: 2%;
 }
 
-/*Submit Button */
+/* Submit Button */
 .login-container,
 .signup-container,
 .login-actions {
@@ -69,20 +66,12 @@ div.actions-links {
   text-align: center;
 }
 
-.login-container,
-.signup-container {
-  color: #434b54;
-  text-decoration: none;
-}
-
 .login-container a:hover,
 .signup-container a:hover {
   text-decoration: underline;
 }
 
-
 /* log in and logout buttons */
-
 .login-input {
   width: 80%;
   padding: 10px;
@@ -96,7 +85,6 @@ div.actions-links {
   outline: none;
   border-color: #007bff;
 }
-
 
 .login-button,
 .logout-button {
@@ -115,5 +103,5 @@ div.actions-links {
 
 .login-button:hover,
 .logout-button:hover {
-  background-color: #3778c2 ;
+  background-color: #3778c2;
 }

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # path after sign in or log in
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     categories_path
   end
 

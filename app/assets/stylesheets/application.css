@@ -1,5 +1,6 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:opsz@6..12&display=swap');
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -77,7 +78,7 @@ body {
 
 .container {
   max-width: 768px;
-  min-with: 280px;
+  min-width: 280px;
   width: 100%;
   margin: 0 auto;
   background: #e8e9e8;

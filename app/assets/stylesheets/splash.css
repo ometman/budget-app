@@ -21,12 +21,12 @@ a.home-signup-btn,
 a.home-login-btn {
   text-align: center;
   padding-top: 6%;
-  background-color: #f3f3f3; 
+  background-color: #f3f3f3;
   width: 40vw;
   height: 12vh;
 }
 
-a.home-signup-btn:hover, 
+a.home-signup-btn:hover,
 a.home-login-btn:hover {
   background-color: #3778c2;
   color: #fff;
@@ -34,26 +34,22 @@ a.home-login-btn:hover {
 
 .home-signup-btn,
 .home-login-btn {
-  background-color: #f3f3f3; 
+  background-color: #f3f3f3;
   border: none;
   width: 40vw;
   height: 12vh;
-  margin: 0 auto;   
+  margin: 0 auto;
   font-size: 16px;
   cursor: pointer;
   border-radius: 8px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
-  border: none;
   text-decoration: none;
 }
 
-@media screen and ( max-width: 280px) {
+@media screen and (max-width: 280px) {
   .home-signup-btn,
   .home-login-btn {
     width: 60vw;
     height: 10vh;
   }
 }
-
-  
