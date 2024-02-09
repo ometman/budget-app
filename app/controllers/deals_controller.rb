@@ -1,14 +1,13 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category
-  before_action :set_deal, only: [:show, :edit, :update, :destroy]
+  before_action :set_deal, only: %i[show edit update destroy]
 
   def index
     @deals = @category.deals.includes(:category).order(created_at: :asc)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @deal = @category.deals.build
@@ -23,9 +22,8 @@ class DealsController < ApplicationController
       render :new
     end
   end
-  
-  def edit
-  end
+
+  def edit; end
 
   def update
     if @deal.update(deal_params)
