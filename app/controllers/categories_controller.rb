@@ -14,16 +14,20 @@ class CategoriesController < ApplicationController
     @oldest_categories = Category.oldest
   end
 
-  def show; end
+  def show; 
+    @category = Category.find(params[:id])
+    @deals = @category.deals
+  end
 
   def new
     @category = current_user.categories.build
+    @deal = @category.deals.build
   end
 
   def create
     @category = current_user.categories.build(category_params)
     if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to user_categories_path, notice: 'Category was successfully created.'
     else
       render :new
     end

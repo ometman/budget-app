@@ -9,3 +9,11 @@
 <%= link_to "Delete Category", @category, method: :delete, data: { confirm: "Are you sure?" } %>
 
 <%= link_to "View Transactions", category_deals_path(@category) %>
+
+<h1><%= @category.name %> Transactions</h1>
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li><%= transaction.name %>: <%= transaction.amount %></li>
+  <% end %>
+</ul>
+

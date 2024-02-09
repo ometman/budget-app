@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # path after sign in or log in
-  def after_sign_in_path_for(_resource)
-    categories_path
+  def after_sign_in_path_for(resource)
+    user_categories_path(current_user)
   end
 
   # path after sign out
   def after_sign_out_path_for(_resource_or_scope)
-    root_path || home_path # Redirect to home page after sign out
+    root_path # Redirect to home page after sign out
   end
 
   protected
