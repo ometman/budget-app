@@ -1,4 +1,4 @@
-<% render 'header' %>
+<%= render 'header' %>
 <main class="categories">
   <div class="credit-info">
     <p class="gift-text">Gift credit</p>
@@ -10,7 +10,7 @@
         <% @categories.each do |category| %>
           <%= link_to user_category_path(current_user, category) do %>
             <div class="category-container">
-              <%= image_tag category.icon.variant(resize: "100x100") if category.icon.attached? %>
+              <%= image_tag url_for(category.icon.variant(resize: "100x100")) if category.icon.attached? %>
               <div class="cat-name-date">
                 <h2 class="cat-name"><%= category.name %></h2>
                 <p class="cat-date"><%= category.created_at %></p>

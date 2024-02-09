@@ -12,7 +12,8 @@ main.categories {
 }
 
 /* Gift Info */
-.credit-info {
+.credit-info,
+.cat-total-info {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -20,11 +21,14 @@ main.categories {
   background-color: #fff;
 }
 
-.gift-text {
+.gift-text
+.total-text {
   font-size: 18px;
+  font-weight: bold;
 }
 
-.gift-amt {
+.gift-amt,
+.total-amt {
   font-size: 16px;
   font-weight: bold;
 }
@@ -96,14 +100,6 @@ main.categories {
 
 .new-category-btn:hover {
   background-color: #3778c2;
-}
-
-.category-scan {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: green;
-  border: 1px solid #fff;
 }
 
 .no-category-msg {
@@ -184,3 +180,66 @@ h2.categories-heading {
   border-radius: 4px;
   color: #fff;
 }
+
+
+/* category transactions */
+
+h2.cat-transact-heading {
+  padding-top: 4%;
+  font-size: 18px;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 4%;
+}
+
+ul.cat-transact-container {
+  margin-top: 20px;
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 1% 2%;
+  border: 1px solid #5fb523;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cat-transact-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid #5fb523;
+  padding: 10px 0;
+}
+
+.cat-transact-list:nth-child(2) {
+  border-top: 1px solid #5fb523;
+}
+
+.cat-transact-list:last-child {
+  border-bottom: none;
+}
+
+.scan-btn-container {
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+  background-color: #5fb523;
+  text-align: center;
+  padding: 2%;
+}
+
+button.scan-button {
+  background-color: #5fb523;
+  width: 100%;
+  border: 1px solid #fff;
+  margin: 0 auto;
+  padding: 3%;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer; 
+}
+
