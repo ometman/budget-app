@@ -4,11 +4,11 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = current_user.categories
-    if params[:oldest]
-      @categories = @categories.order(created_at: :asc)
-    else
-      @categories = @categories.order(created_at: :desc)
-    end
+    @categories = if params[:oldest]
+                    @categories.order(created_at: :asc)
+                  else
+                    @categories.order(created_at: :desc)
+                  end
   end
 
   def show
