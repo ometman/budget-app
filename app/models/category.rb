@@ -5,6 +5,4 @@ class Category < ApplicationRecord
   has_one_attached :icon
 
   default_scope { order(name: :asc) }
-  scope :most_recent, -> { order(created_at: :desc).limit(3) }
-  scope :oldest, -> { order(created_at: :asc).limit(3) }
 end

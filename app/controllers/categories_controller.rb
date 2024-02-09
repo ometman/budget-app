@@ -4,14 +4,11 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = current_user.categories
-  end
-
-  def self_most_recent
-    @recent_categories = Category.most_recent
-  end
-
-  def self_oldest
-    @oldest_categories = Category.oldest
+    @categories = if params[:oldest]
+                    @categories.order(created_at: :asc)
+                  else
+                    @categories.order(created_at: :desc)
+                  end
   end
 
   def show
