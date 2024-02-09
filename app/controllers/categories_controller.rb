@@ -14,11 +14,12 @@ class CategoriesController < ApplicationController
     @oldest_categories = Category.oldest
   end
 
-  def show; 
+  def show
     @category = Category.find(params[:id])
     if params[:oldest]
       @deals = @category.deals.order(created_at: :asc)
-    else params[:recent]
+    else
+      params[:recent]
       @deals = @category.deals.order(created_at: :desc)
     end
   end

@@ -3,9 +3,9 @@ class DealsController < ApplicationController
 
   before_action :set_deal, only: %i[show edit update destroy]
 
-  def index 
+  def index
     @category = Category.find(params[:category_id])
-    @deals = @category.deals.order(created_at: :asc) 
+    @deals = @category.deals.order(created_at: :asc)
   end
 
   def show; end
