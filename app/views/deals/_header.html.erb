@@ -1,0 +1,15 @@
+<header class="transactions">
+<div class="main-header-row">
+  <h1>Ometman Budget App</h1>
+  <div class="login-logout-btn"
+    <% if user_signed_in? %>
+    <p>Hello, <%= current_user.name %>!</p>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
+    <% end %>
+  </div>
+</div>
+<div class="recent-old-cat-links">
+  <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 
+  <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
+</div>
+</header>

@@ -1,28 +1,30 @@
-<%= form_with(model: [@category, @deal], local: true) do |form| %>
-    <% if @deal.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this transaction from being saved:</h2>
-  
-        <ul>
-          <% @deal.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<main class="transactions">
+<h2 class="transactions-heading"> Add a New Transaction </h2>
+  <div class="transsactions-form-container">
+    <%= form_with(model: [@category, @deal], url: user_category_deals_path(current_user, @category), local: true, html: { class: 'new-deal-form' }) do |form| %>
+      <div class="field name-field">
+        <%= form.label :name %>:
+        <%= form.text_field :name %>
+      </div>
+
+      <div class="field name-field">
+        <%= form.label :amount %>:
+        <%= form.number_field :amount %>
+      </div>
+
+      <div class="category-selector">
+        <p class="cat-label"><%= form.label :category_ids, "Categories" %></p>
+        <p>
+        <%= form.collection_select(:category_id, current_user.categories, :id, :name, { include_hidden: false }, { multiple: false }) %>
+        </p>
+      </div>
+
+
+      <div class="new-cat-action">
+        <%= form.submit "Save", class: "save-action-btn" %>
       </div>
     <% end %>
-  
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-  
-    <div>
-      <%= form.label :amount %>
-      <%= form.number_field :amount %>
-    </div>
-  
-    <div>
-      <%= form.submit "Save" %>
-    </div>
-  <% end %>
-  
+  </div>
+<%= link_to "Back to Transactions", user_category_path(current_user, @category) %>
+
+</main>

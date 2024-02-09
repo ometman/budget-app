@@ -20,12 +20,18 @@
   </div>
   <ul class="cat-transact-container">
     <h2 class="cat-transact-heading">List of Deals</h2>
-    <% @deals.each do |deal| %>
-      <li class='cat-transact-list'>
-        <p><%= deal.name %>:</p>
-        <p> <%= deal.amount %></p>
-      </li>
-    <% end %>
+    <div class="transaction-scroll">
+      <% if @deals.present? %>
+        <% @deals.each do |deal| %>
+          <li class='cat-transact-list'>
+            <p><%= deal.name %>:</p>
+            <p> <%= deal.amount %></p>
+          </li>
+        <% end %>
+      <% else %>
+        <p class="no-resource-msg">No transactions available</p>
+      <% end %>
+    </div>
   </ul>
   <div class="category-actions">
   <%= link_to "Add a New Transaction", new_user_category_deal_path(current_user, @category), class: 'new-category-btn' %>
