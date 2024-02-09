@@ -87,7 +87,8 @@ div.actions-links {
 }
 
 .login-button,
-.logout-button {
+.logout-button,
+.save-action-btn {
   background-color: #93abc7;
   border: none;
   color: white;

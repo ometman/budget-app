@@ -1,35 +1,25 @@
-<%= form_with(model: [@category, @deal], local: true) do |form| %>
-    <% if @deal.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this transaction from being saved:</h2>
-  
-        <ul>
-          <% @deal.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+
+<main class="categories">
+<h2 class="categories-heading"> Add a New Category </h2>
+  <div class="categories-form-container">
+    <%= form_with(model: @category, url: user_categories_path(current_user), local: true, html: { class: 'new-category-form' }) do |form| %>
+      <div class="field name-field">
+        <%= form.label :name %> :
+        <%= form.text_field :name %>
+      </div>
+    
+      <div class="field icon-field">
+        <%= form.label :icon %> :
+        <%= form.file_field :icon %>
+      </div>
+    
+      <div class="actions new-cat-action">
+        <%= form.submit "Save", class: 'save-action-btn' %>
       </div>
     <% end %>
-  
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-  
-    <div>
-      <%= form.label :amount %>
-      <%= form.number_field :amount %>
-    </div>
-  
-    <div>
-      <%= form.label :category_id %>
-      <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: true %>
-    </div>
-  
-    <div>
-      <%= form.submit "Save" %>
-    </div>
-  <% end %>
-  
-  <%= link_to "Back to Transactions", category_deals_path(@category) %>
-  
+  </div>
+  <%= link_to "Back to Categories", user_categories_path(current_user), class: "back-link" %>
+<main>
+
+
+

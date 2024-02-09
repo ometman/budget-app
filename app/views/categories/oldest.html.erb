@@ -1,18 +1,4 @@
-<header class="categories">
-<div class="main-header-row">
-  <h1>Ometman Budget App</h1>
-  <div class="login-logout-btn">
-    <% if user_signed_in? %>
-    <p>Hello, <%= current_user.name %>!</p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
-    <% end %>
-  </div>
-</div>
-<div class="recent-old-cat-links">
-  <%= link_to 'Most recent', most_recent_categories_path %> | 
-  <%= link_to 'Most oldest', oldest_categories_path %>
-</div>
-</header>
+<%= render 'header' %>
 <main class="categories">
   <div class="credit-info">
     <p class="gift-text">Gift credit</p>
@@ -39,7 +25,7 @@
     </div>
   </div>
   <div class="category-actions">
-    <%= link_to "Add a new category", new_category_path, class: 'new-category-btn' %>
+  <%= link_to "Add a new category", new_user_category_path(current_user), class: 'new-category-btn' %>
   </div>
 </main>
 
