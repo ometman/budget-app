@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="recent-old-cat-links">
-  <%= link_to 'Most recent', most_recent_categories_path %> | 
-  <%= link_to 'Most oldest', oldest_categories_path %>
+  <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 
+  <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
 </div>
 </header>
