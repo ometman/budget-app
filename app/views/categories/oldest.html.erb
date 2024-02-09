@@ -1,7 +1,7 @@
 <header class="categories">
 <div class="main-header-row">
   <h1>Ometman Budget App</h1>
-  <div class="login-logout-btn"
+  <div class="login-logout-btn">
     <% if user_signed_in? %>
     <p>Hello, <%= current_user.name %>!</p>
     <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
@@ -20,8 +20,8 @@
   </div>
   <div class="categories-container">
     <div class="category-scroll">
-      <% if @categories.present? %>
-        <% @categories.each do |category| %>
+      <% if @oldest_categories.present? %>
+        <% @oldest_categories.each do |category| %>
           <%= link_to category_path(category) do %>
             <div class="category-container">
               <%= image_tag category.icon.variant(resize: "100x100") if category.icon.attached? %>
@@ -34,7 +34,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <p>No recent categories available</p>
+      <p class="no-category-msg">No oldest categories available</p>
       <% end %>
     </div>
   </div>

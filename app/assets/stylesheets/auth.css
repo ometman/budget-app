@@ -1,0 +1,107 @@
+header.auth {
+  height: 20vh;
+}
+
+.login-heading {
+  padding-top: 4%;
+}
+
+main {
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #434b54;
+}
+
+/* Form Container */
+.login-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #434b54;
+  text-decoration: none;
+}
+
+/* Form Fields */
+.login-field,
+.signup-field {
+  margin: 2%;
+}
+
+/* Submit Button */
+.login-container,
+.signup-container,
+.login-actions {
+  text-align: center;
+}
+
+.login-container,
+.signup-container,
+.login.input[type="submit"] {
+  background-color: #fff;
+  color: #434b54;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login.input[type="submit"]:hover,
+.signup.input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Links Section */
+div.actions-links {
+  text-align: center;
+}
+
+.login-container a:hover,
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* log in and logout buttons */
+.login-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.login-button,
+.logout-button {
+  background-color: #93abc7;
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  background-color: #3778c2;
+}

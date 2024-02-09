@@ -6,6 +6,14 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
+  def self_most_recent
+    @recent_categories = Category.most_recent
+  end
+
+  def self_oldest
+    @oldest_categories = Category.oldest
+  end
+
   def show; end
 
   def new

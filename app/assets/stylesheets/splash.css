@@ -1,0 +1,55 @@
+header.splash {
+  height: 20vh;
+}
+
+main.home {
+  height: 80vh;
+  flex-direction: row;
+  justify-content: center;
+  color: #434b54;
+}
+
+.home-action-btns {
+  gap: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+a.home-signup-btn,
+a.home-login-btn {
+  text-align: center;
+  padding-top: 6%;
+  background-color: #f3f3f3;
+  width: 40vw;
+  height: 12vh;
+}
+
+a.home-signup-btn:hover,
+a.home-login-btn:hover {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.home-signup-btn,
+.home-login-btn {
+  background-color: #f3f3f3;
+  border: none;
+  width: 40vw;
+  height: 12vh;
+  margin: 0 auto;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 280px) {
+  .home-signup-btn,
+  .home-login-btn {
+    width: 60vw;
+    height: 10vh;
+  }
+}

@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:opsz@6..12&display=swap');
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -67,37 +70,44 @@ table {
   border-spacing: 0;
 }
 
-/* Reset some default styles for better consistency */
-body,
-h1,
-h2,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   line-height: 1.6;
+  font-weight: 200;
 }
 
-/* Basic styling for the entire page */
 .container {
-  max-width: 100%;
-  padding: 10px;
+  max-width: 768px;
+  min-width: 280px;
+  width: 100%;
   margin: 0 auto;
+  background: #e8e9e8;
+  border: 2px solid #000;
 }
 
-/* Header styling */
 header {
-  background-color: #333;
+  background-color: #3778c2;
   color: #fff;
-  padding: 10px;
-  text-align: center;
+  padding: 20px;
 }
 
-/* Navigation styling */
+.main-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
 nav {
   background-color: #555;
 }
@@ -109,32 +119,19 @@ nav a {
   display: inline-block;
 }
 
-/* Main content styling */
 main {
-  padding: 20px 0;
+  display: flex;
+  background-color: #fff;
 }
 
-/* Article styling */
-article {
-  margin-bottom: 20px;
-}
-
-article img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Footer styling */
 footer {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
-  padding: 10px;
   text-align: center;
 }
 
-/* Responsive design - adjust styles based on screen size */
+/* Responsive design - adjust styles based on screen size
 @media screen and (max-width: 768px) {
-  /* Adjust the styles for smaller screens here */
   header {
     font-size: 1.5em;
   }
@@ -145,20 +142,16 @@ footer {
   }
 }
 
-/* Additional styles for screens with a maximum width of 280px */
-@media screen and (max-width: 280px) {
-  /* Adjust styles for screens with a maximum width of 280px here */
+@media screen and (min-width: 280px and max-width: 375px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   header {
-    padding: 5px;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   nav a {
-    padding: 8px;
   }
 
   article {
@@ -169,3 +162,22 @@ footer {
     padding: 5px;
   }
 }
+
+@media screen and (min-width: 375px and max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    font-size: 1.2em;
+  }
+
+  nav a {
+  }
+
+  article {
+  }
+
+  footer {
+  }
+} */
