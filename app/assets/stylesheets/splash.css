@@ -1,8 +1,12 @@
 header.splash {
   height: 20vh;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-main.home {
+main.splash {
   height: 80vh;
   flex-direction: row;
   justify-content: center;
@@ -15,15 +19,21 @@ main.home {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 1%;
+
 }
 
 a.home-signup-btn,
 a.home-login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   text-align: center;
-  padding-top: 6%;
   background-color: #f3f3f3;
-  width: 40vw;
-  height: 12vh;
+  font-size: 18px;
+  width: 80%;
 }
 
 a.home-signup-btn:hover,
@@ -36,7 +46,6 @@ a.home-login-btn:hover {
 .home-login-btn {
   background-color: #f3f3f3;
   border: none;
-  width: 40vw;
   height: 12vh;
   margin: 0 auto;
   font-size: 16px;
@@ -46,10 +55,12 @@ a.home-login-btn:hover {
   text-decoration: none;
 }
 
-@media screen and (max-width: 280px) {
+p.welcome {
+  font-size: 12px;
+}
+
+/* @media screen and (max-width: 280px) {
   .home-signup-btn,
   .home-login-btn {
-    width: 60vw;
-    height: 10vh;
   }
-}
+} */
