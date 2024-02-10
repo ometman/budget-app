@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: %i[index show new create edit update destroy]
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
-    @categories = current_user.categories.includes(:deals)
+    @categories = current_user.categories
     @categories = if params[:oldest]
                     @categories.order(created_at: :asc)
                   else
@@ -12,12 +12,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:deals).find(params[:id])
-    @deals = if params[:oldest]
-               @category.deals.order(created_at: :asc)
-             else
-               @category.deals.order(created_at: :desc)
-             end
+    @category = Category.find(params[:id])
+    if params[:oldest]
+      @deals = @category.deals.order(created_at: :asc)
+    else
+      params[:recent]
+      @deals = @category.deals.order(created_at: :desc)
+    end
   end
 
   def new
@@ -33,6 +34,8 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
+
+  def edit; end
 
   def update
     if @category.update(category_params)
@@ -50,7 +53,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = current_user.categories.includes(:deals).find(params[:id])
+    @category = current_user.categories.find(params[:id])
   end
 
   def category_params
