@@ -1,8 +1,9 @@
 <%= render 'header' %>
 <main class="categories">
   <div class="credit-info">
-    <p class="gift-text">Gift credit</p>
-    <p class="gift-amt">5% of total amount</p>
+    <p class="gift-text">Total Amount</p>
+    <p class="gift-amt"><%= Deal.where(author_id: current_user.id).sum(:amount) %>
+    </p>
   </div>
   <div class="categories-container">
     <div class="category-scroll">

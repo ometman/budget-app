@@ -1,18 +1,4 @@
-<header class="categories">
-<div class="main-header-row">
-  <h1><%= @category.name %>Deals</h1>
-  <div class="login-logout-btn"
-    <% if user_signed_in? %>
-    <p>Hello, <%= current_user.name %>!</p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
-    <% end %>
-  </div>
-</div>
-<div class="recent-old-cat-links">
-  <%= link_to 'Most recent', user_category_path(current_user, @category, recent: true) %> |
-  <%= link_to 'Most oldest', user_category_path(current_user, @category, oldest: true) %>
-</div>
-</header>
+<%= render 'header' %>
 <main class="categories transaction">
   <div class="cat-total-info">
     <p class="total-text">Total Amount:</p>
