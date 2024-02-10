@@ -49,7 +49,7 @@ main.categories {
 .categories-container {
   width: 100%;
   overflow-y: auto;
-  max-height: 600px;
+  height: 450px;
 }
 
 .category-scroll {
@@ -95,24 +95,6 @@ main.categories {
   width: 80px;
   height: 80px;
   object-fit: cover;
-}
-
-.new-category-btn {
-  background-color: #93abc7;
-  border: none;
-  color: white;
-  padding: 6px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 15px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.new-category-btn:hover {
-  background-color: #3778c2;
 }
 
 .no-resource-msg {
@@ -214,7 +196,8 @@ h2.cat-transact-heading {
 
 ul.cat-transact-container {
   margin-top: 20px;
-  max-width: 400px;
+  max-width: 580px;
+  height: 50vh;
   width: 90%;
   background-color: #fff;
   padding: 1% 2%;
@@ -241,7 +224,7 @@ ul.cat-transact-container {
   border-bottom: none;
 }
 
-.scan-btn-container {
+.category-actions {
   position: fixed;
   bottom: 0;
   margin: 0 auto;
@@ -252,13 +235,22 @@ ul.cat-transact-container {
   padding: 2%;
 }
 
-button.scan-button {
+button.new-category-btn {
   background-color: #5fb523;
-  width: 100%;
   border: 1px solid #fff;
-  margin: 0 auto;
+  color: white;
   padding: 3%;
-  color: #fff;
-  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
   cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button.new-category-btn:hover {
+  background-color: #4ca112;
 }

@@ -79,7 +79,6 @@ body {
 
 .container {
   max-width: 768px;
-  min-width: 280px;
   width: 100%;
   margin: 0 auto;
   background: #e8e9e8;

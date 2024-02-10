@@ -158,6 +158,6 @@ p.cat-label {
 
 .transaction-scroll {
   overflow-y: auto;
-  height: 200px;
+  height: 300px;
   padding-right: 10px;
 }
