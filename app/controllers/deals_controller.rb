@@ -1,11 +1,13 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category
-  before_action :set_deal, only: %i[index new create update destroy]
+  before_action :set_deal, only: %i[show edit update destroy]
 
   def index
-    @deals = @category.deals.includes(:category, :user).order(created_at: :asc)
+    @deals = @category.deals.includes(:category).order(created_at: :asc)
   end
+
+  def show; end
 
   def new
     @deal = @category.deals.build
@@ -20,6 +22,8 @@ class DealsController < ApplicationController
       render :new
     end
   end
+
+  def edit; end
 
   def update
     if @deal.update(deal_params)
@@ -37,11 +41,11 @@ class DealsController < ApplicationController
   private
 
   def set_category
-    @category = Category.includes(:deals).find(params[:category_id])
+    @category = Category.find(params[:category_id])
   end
 
   def set_deal
-    @deal = current_user.deals.includes(:category).find(params[:id])
+    @deal = current_user.deals.find(params[:id])
   end
 
   def deal_params

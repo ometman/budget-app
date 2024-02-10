@@ -35,7 +35,7 @@
 # 📖 Ometman Budget App <a name="about-project"></a>
 
 **A Demo Video: Introduction to this Project**
---coming soon
+--[Budget Demo](https://www.loom.com/share/ef4cb156194342bc976de0c19a824b58?sid=9e7437f4-f405-46d8-9f76-edcdaa4a61f8)
 
 > The project is mobile-oriented designs for different screen sizes.
 
