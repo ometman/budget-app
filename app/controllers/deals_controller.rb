@@ -4,7 +4,7 @@ class DealsController < ApplicationController
   before_action :set_deal, only: %i[show edit update destroy]
 
   def index
-    @deals = @category.deals.includes(:category).order(created_at: :asc)
+    @deals = @category.deals.includes(:category, :user).order(created_at: :asc)
   end
 
   def show; end
@@ -41,11 +41,11 @@ class DealsController < ApplicationController
   private
 
   def set_category
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:deals).find(params[:category_id])
   end
 
   def set_deal
-    @deal = current_user.deals.find(params[:id])
+    @deal = current_user.deals.includes(:category).find(params[:id])
   end
 
   def deal_params
