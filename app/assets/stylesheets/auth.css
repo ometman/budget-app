@@ -1,8 +1,6 @@
 header.auth {
   height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 50px;
 }
 
 .login-heading {
@@ -12,9 +10,11 @@ header.auth {
 main {
   height: 80vh;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   color: #434b54;
+  background-color: #f3f3f3;
+  padding-top: 4%;
 }
 
 /* Form Container */
@@ -22,75 +22,79 @@ main {
 .signup-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 400px;
+  justify-content: flex-start;
+  max-width: 768px;
   width: 100%;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 10px;
   background-color: #fff;
-  color: #434b54;
+  color: #f3f3f3;
   text-decoration: none;
+  margin-bottom: 20px;
 }
 
 /* Form Fields */
-.login-field,
-.signup-field {
-  margin: 2%;
-}
-
-/* Submit Button */
-.login-container,
-.signup-container,
-.login-actions {
-  text-align: center;
-}
-
-.login-container,
-.signup-container,
-.login.input[type="submit"] {
-  background-color: #fff;
-  color: #434b54;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login.input[type="submit"]:hover,
-.signup.input[type="submit"]:hover {
-  background-color: #0056b3;
+.login-label,
+.signup-label {
+  display: none;
 }
 
 /* Links Section */
 div.actions-links {
-  text-align: center;
+  text-align: left;
 }
 
 .login-container a:hover,
 .signup-container a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* log in and logout buttons */
-.login-input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.login-input
+.signup-input {
+  width: 100%;
+  padding: 16px;;
+  border: none;
   font-size: 16px;
+  color: #f3f3f3;
 }
 
-.login-input:focus {
+.login-input:focus,
+.signup-input:focus {
   outline: none;
-  border-color: #007bff;
 }
 
-.login-button,
-.logout-button,
+.name,
+.email,
+.password {
+  border-top: 3px solid #f3f3f3;
+  width: 100%;
+  padding: 16px;
+  border-left: none;
+  border-right: none;
+}
+
+.name {
+  border-bottom: 3px solid #f3f3f3;
+}
+
+.email {
+  border-bottom: 3px solid #f3f3f3;
+}
+
+.password {
+  border-bottom: 3px solid #f3f3f3;
+}
+
+.login-btn-text,
+.signup-btn-text {
+  border: none;
+  color: #fff;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .save-action-btn {
   background-color: #93abc7;
   border: none;
