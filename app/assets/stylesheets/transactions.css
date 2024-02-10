@@ -1,5 +1,5 @@
 header.transactions {
-  height: 16vh;
+  height: 13vh;
 }
 
 main.transactions {
@@ -8,7 +8,7 @@ main.transactions {
   justify-content: flex-start;
   align-items: center;
   background-color: #f3f3f3;
-  height: 83vh;
+  height: 87vh;
 }
 
 /* Gift Info */

@@ -1,5 +1,18 @@
 header.categories {
-  height: 16vh;
+  height: 13vh;
+}
+
+.menu-title-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main.categories {
@@ -8,7 +21,7 @@ main.categories {
   justify-content: flex-start;
   align-items: center;
   background-color: #f3f3f3;
-  height: 83vh;
+  height: 87vh;
 }
 
 /* Gift Info */
@@ -108,9 +121,10 @@ main.categories {
   color: red;
 }
 
-.recent-old-cat-links {
+.header-cat-links {
   text-align: right;
   margin-right: 0;
+  margin-top: 12px;
 }
 
 /* new category form */
@@ -118,6 +132,7 @@ main.categories {
 h2.categories-heading,
 h2.transactions-heading {
   padding-top: 4%;
+  font-size: 1.1rem;
 }
 
 .categories-form-container,
@@ -132,7 +147,7 @@ h2.transactions-heading {
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  width: 100%;
+  width: 90%;
   margin: 5% auto;
   padding: 40px;
   border: 1px solid #ccc;
@@ -148,6 +163,10 @@ h2.transactions-heading {
 .field.amt-field label,
 .field.cat-field label {
   font-weight: bold;
+}
+
+input[type="file"] {
+  width: 80%;
 }
 
 .field.name-field input[type="text"] {
@@ -196,7 +215,7 @@ h2.cat-transact-heading {
 ul.cat-transact-container {
   margin-top: 20px;
   max-width: 400px;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   padding: 1% 2%;
   border: 1px solid #5fb523;

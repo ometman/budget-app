@@ -1,5 +1,8 @@
 header.auth {
   height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-heading {
