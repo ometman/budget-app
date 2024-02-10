@@ -1,23 +1,23 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :set_category
   before_action :set_deal, only: %i[show edit update destroy]
 
   def index
-    @category = Category.find(params[:category_id])
-    @deals = @category.deals.order(created_at: :asc)
+    @deals = @category.deals.includes(:category).order(created_at: :asc)
   end
 
   def show; end
 
   def new
-    @deal = current_user.deals.build
+    @deal = @category.deals.build
   end
 
   def create
     @deal = @category.deals.build(deal_params)
+    @deal.user = current_user
     if @deal.save
-      redirect_to category_deals_path(@category), notice: 'Deal was successfully created.'
+      redirect_to user_category_deals_path(current_user, @category), notice: 'Deal was successfully created.'
     else
       render :new
     end
@@ -39,6 +39,10 @@ class DealsController < ApplicationController
   end
 
   private
+
+  def set_category
+    @category = Category.find(params[:category_id])
+  end
 
   def set_deal
     @deal = current_user.deals.find(params[:id])

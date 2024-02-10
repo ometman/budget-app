@@ -1,0 +1,163 @@
+header.transactions {
+  height: 16vh;
+}
+
+main.transactions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f3f3f3;
+  height: 83vh;
+}
+
+/* Gift Info */
+.credit-info,
+.cat-total-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.gift-text .total-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gift-amt,
+.total-amt {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Categories Container */
+.categories-container {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.category-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 20px;
+  background-color: #f3f3f3;
+  gap: 20px;
+  padding-right: 10px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.cat-name-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cat-name {
+  font-size: 18px;
+}
+
+.cat-date {
+  font-size: 10px;
+}
+
+.category-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.new-category-btn {
+  background-color: #93abc7;
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.new-category-btn:hover {
+  background-color: #3778c2;
+}
+
+.no-category-msg {
+  text-align: center;
+  font-size: 16px;
+  color: red;
+}
+
+.recent-old-cat-links {
+  text-align: right;
+  margin-right: 0;
+}
+
+/* new transactions form */
+
+.new-cat-action {
+  align-self: center;
+}
+
+.save-action-btn {
+  align-self: center;
+}
+
+.category-selector {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.new-deal-form {
+  margin: 1% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.field input[type="number"],
+.category-selector select {
+  width: 73%;
+  padding: 1%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.category-selector select {
+  width: 100%;
+  padding: 10px;
+}
+
+p.cat-label {
+  font-weight: bold;
+}
+
+.transaction-scroll {
+  overflow-y: auto;
+  height: 200px;
+  padding-right: 10px;
+}

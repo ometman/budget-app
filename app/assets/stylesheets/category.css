@@ -49,7 +49,8 @@ main.categories {
   padding-right: 10px;
 }
 
-.category-container {
+.category-container,
+.transactions-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,7 +102,7 @@ main.categories {
   background-color: #3778c2;
 }
 
-.no-category-msg {
+.no-resource-msg {
   text-align: center;
   font-size: 16px;
   color: red;
@@ -113,21 +114,24 @@ main.categories {
 }
 
 /* new category form */
-h2.categories-heading {
+
+h2.categories-heading,
+h2.transactions-heading {
   padding-top: 4%;
 }
 
-.categories-form-container {
+.categories-form-container,
+.transactions-form-container {
   display: block;
   margin: 0 auto;
 }
 
-.new-category-form {
+.new-category-form,
+.new-deal-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  max-width: 400px;
   width: 100%;
   margin: 5% auto;
   padding: 40px;
@@ -140,7 +144,9 @@ h2.categories-heading {
 }
 
 .field.name-field label,
-.field.icon-field label {
+.field.icon-field label,
+.field.amt-field label,
+.field.cat-field label {
   font-weight: bold;
 }
 
@@ -166,18 +172,16 @@ h2.categories-heading {
   transition: background-color 0.3s ease;
 }
 
-/* back or return links */
+.save-action-btn:hover {
+  background-color: #3778c2;
+  border-radius: 4px;
+  color: #fff;
+}
 
 .back-link {
   display: inline-block;
   padding: 5px 10px;
   color: #434b54;
-}
-
-.save-action-btn:hover {
-  background-color: #3778c2;
-  border-radius: 4px;
-  color: #fff;
 }
 
 /* category transactions */
@@ -210,7 +214,7 @@ ul.cat-transact-container {
   padding: 10px 0;
 }
 
-.cat-transact-list:nth-child(2) {
+.cat-transact-list:nth-child(1) {
   border-top: 1px solid #5fb523;
 }
 
