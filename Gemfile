@@ -4,6 +4,7 @@ ruby '3.2.2'
 
 gem 'cancancan'
 gem 'devise'
+gem 'diff-lcs', '~> 1.5'
 gem 'image_processing', '~> 1.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -68,5 +69,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rspec-rails', '~> 6.1.0'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.0'
 end

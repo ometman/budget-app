@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: %i[show edit update destroy]
+  before_action :set_category, only: %i[index show new create edit update destroy]
 
   def index
     @categories = current_user.categories.includes(:deals)
@@ -33,8 +33,6 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @category.update(category_params)
