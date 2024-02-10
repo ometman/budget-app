@@ -6,6 +6,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'image_processing', '~> 1.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'font-awesome-sass'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
