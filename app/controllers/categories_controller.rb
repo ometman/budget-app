@@ -13,11 +13,11 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.includes(:deals).find(params[:id])
-    if params[:oldest]
-      @deals = @category.deals.order(created_at: :asc)
-    else
-      @deals = @category.deals.order(created_at: :desc)
-    end
+    @deals = if params[:oldest]
+               @category.deals.order(created_at: :asc)
+             else
+               @category.deals.order(created_at: :desc)
+             end
   end
 
   def new
