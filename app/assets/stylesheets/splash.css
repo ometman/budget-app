@@ -68,7 +68,7 @@ p.welcome {
 .header-btn {
   background-color: #3778c2;
   color: #fff;
-  padding: 6px 12px;
+  padding: 3px 6px;
   border-radius: 4px;
   font-size: 14px;
   transition: background-color 0.3s ease;
@@ -79,6 +79,7 @@ p.welcome {
 .header-btn:hover {
   background-color: #5fb523;
   color: #fff;
+  border: none;
 }
 
 

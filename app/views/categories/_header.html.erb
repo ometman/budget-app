@@ -1,14 +1,12 @@
 <header class="categories">
-<div class="main-header-row">
-  <h1>Ometman Budget App</h1>
-  <div class="login-logout-btn"
-    <% if user_signed_in? %>
-    <p>Hello, <%= current_user.name %>!</p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
-    <% end %>
+<div class="menu-title-search">
+  <i class="fas fa-bars"></i>
+  <div class="header-title">
+    <h1>Transactions</h1>
   </div>
+  <i class="fas fa-search"></i>
 </div>
-<div class="recent-old-cat-links">
+<div class="header-cat-links">
   <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 
   <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
 </div>

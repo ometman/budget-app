@@ -1,5 +1,18 @@
 header.categories {
-  height: 16vh;
+  height: 13vh;
+}
+
+.menu-title-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main.categories {
@@ -8,7 +21,7 @@ main.categories {
   justify-content: flex-start;
   align-items: center;
   background-color: #f3f3f3;
-  height: 83vh;
+  height: 87vh;
 }
 
 /* Gift Info */
@@ -108,9 +121,10 @@ main.categories {
   color: red;
 }
 
-.recent-old-cat-links {
+.header-cat-links {
   text-align: right;
   margin-right: 0;
+  margin-top: 12px;
 }
 
 /* new category form */
