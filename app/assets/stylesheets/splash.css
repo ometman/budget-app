@@ -59,6 +59,29 @@ p.welcome {
   font-size: 12px;
 }
 
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-btn {
+  background-color: #3778c2;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #fff;
+}
+
+.header-btn:hover {
+  background-color: #5fb523;
+  color: #fff;
+}
+
+
 /* @media screen and (max-width: 280px) {
   .home-signup-btn,
   .home-login-btn {

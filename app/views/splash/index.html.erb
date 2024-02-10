@@ -1,10 +1,15 @@
 <header class="splash">
 <div class="main-header-col">
     <h1>Ometman Budget App</h1>
-    <p class="welcome">Welcome!! Login or Register to use</p>
+    <% unless user_signed_in? %>
+        <p class="welcome">Welcome!! Login or Register to use</p>
+    <% end %>
     <% if user_signed_in? %>
     <p>Hello, <%= current_user.name %>!</p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+    <div class="header-btns">
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
+        <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
+    </div>
     <% end %>
 </div>
 </header>
