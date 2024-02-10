@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative '../factories/user'
 
 RSpec.describe User, type: :model do
   describe 'validations' do
