@@ -11,17 +11,17 @@ RSpec.describe CategoriesController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'creates a new category' do
-        expect {
+        expect do
           post :create, params: { category: { name: 'New Category' } }
-        }.to change(Category, :count).by(1)
+        end.to change(Category, :count).by(1)
       end
     end
 
     context 'with invalid attributes' do
       it 'does not create a new category' do
-        expect {
+        expect do
           post :create, params: { category: { name: '' } }
-        }.not_to change(Category, :count)
+        end.not_to change(Category, :count)
       end
     end
   end
