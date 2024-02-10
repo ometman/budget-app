@@ -6,6 +6,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'image_processing', '~> 1.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'diff-lcs', '~> 1.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
@@ -68,8 +69,12 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'rspec-rails', '~> 5.0'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'selenium-webdriver'
+end
+
+# Run against this stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 6.1.0'
 end
