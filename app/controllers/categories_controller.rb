@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: %i[show edit update destroy]
+  before_action :set_category, only: %i[index show new create edit update destroy]
 
   def index
     @categories = current_user.categories
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to user_categories_path, notice: 'Category was successfully created.'
     else
-      render :new
+      redirect_to new_category_path, alert: 'Category creation failed.'
     end
   end
 

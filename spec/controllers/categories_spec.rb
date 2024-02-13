@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
+
   describe 'GET #index' do
     it 'returns a success response' do
       get :index
@@ -22,7 +23,9 @@ RSpec.describe CategoriesController, type: :controller do
         expect do
           post :create, params: { category: { name: '' } }
         end.not_to change(Category, :count)
+        expect(response).to redirect_to(new_category_path)
+        expect(flash[:alert]).to be_present
       end
-    end
+    end    
   end
 end
