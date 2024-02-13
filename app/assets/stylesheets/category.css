@@ -49,7 +49,7 @@ main.categories {
 .categories-container {
   width: 100%;
   overflow-y: auto;
-  height: 450px;
+  height: 64vh;
 }
 
 .category-scroll {
@@ -62,8 +62,7 @@ main.categories {
   padding-right: 10px;
 }
 
-.category-container,
-.transactions-container {
+.category-container {
   display: flex;
   justify-content: space-between;
   align-items: center;

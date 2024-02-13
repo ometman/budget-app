@@ -1,16 +1,34 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+<header class="auth">
+  <div class="menu-title-search">
+  <%= link_to root_path do %>
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  <% end %>
+  <div class="header-title">
+    <h1>Resend confirmation instructions</h1>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  </div>
+  <div class="login-actions">
+    <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("confirmation-form").submit();', class: 'signup-btn-text' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+</header>
+<main class="auth">
+  <div class="signup-container">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { id: 'confirmation-form', class: 'signup-container-form' }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :email, class: "signup-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+
+      <%= f.submit class: 'signup-submit' %> <!-- Hidden submit button -->
+    <% end %>
+  </div>
+</main>
+
+
+

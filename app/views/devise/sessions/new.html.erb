@@ -1,17 +1,31 @@
 <header class="auth">
   <div class="menu-title-search">
-    <i class="fas fa-arrow-left"></i>
+    <%= link_to root_path do %>
+      <span class="material-symbols-outlined">
+        arrow_back
+      </span>
+    <% end %>
     <div class="header-title">
       <h1>LOGIN</h1>
+      <% unless user_signed_in? %>
+        <p class="welcome">Welcome!! Login to use</p>
+    <% end %>
+    <% if user_signed_in? %>
+    <p>Hello, <%= current_user.name %>!</p>
+    <div class="header-btns">
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
+        <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
+    </div>
+    <% end %>
     </div>
     <div class="login-actions">
-      <%= link_to "Next", class: 'login-btn-text' %>
+      <%= link_to "Next", 'javascript:void(0)', onclick: 'document.getElementById("login-form").submit();', class: 'login-btn-text' %>
     </div>
   </div>
 </header>
 <main class="auth">
   <div class="login-container">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container-form' }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'login-form', class: 'login-container-form' }) do |f| %>
     <div class="field">
       <%= f.label :email, "Email", class: "login-label" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email here", class: 'login-input email' %>
@@ -20,6 +34,7 @@
       <%= f.label :password, "Password", class: "login-label" %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password here", class: 'login-input password' %>
     </div>
+    <%= f.submit class: 'login-submit' %> <!-- Hidden submit button -->
   <% end %>  
   </div>
 <main>

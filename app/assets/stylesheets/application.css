@@ -88,7 +88,7 @@ body {
 header {
   background-color: #3778c2;
   color: #fff;
-  padding: 20px;
+  padding: 16px 20px;
 }
 
 .main-header-row {
@@ -120,7 +120,6 @@ nav a {
 }
 
 main {
-  display: flex;
   background-color: #fff;
 }
 
@@ -140,7 +139,35 @@ footer {
   color: #fff;
 }
 
-.fas.fa-angle-left {
-  font-size: 36px;
+.fas fa-angle-left {
+  font-size: 48px;
   color: #fff;
+}
+
+.material-symbols-outlined {
+  font-size: 28px;
+}
+
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flash-error {
+  background-color: #f44336;
+  color: white;
+}
+
+.flash-notice {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.h-notice,
+.h-alert {
+  margin: 10px auto;
+  text-align: center;
+  padding: 2px;
+  color: #ff0000;
+  width: 200px; 
 }

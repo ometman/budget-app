@@ -2,7 +2,7 @@
 <main class="categories">
 <h2 class="categories-heading"> Add a New Category </h2>
   <div class="categories-form-container">
-    <%= form_with(model: @category, url: user_categories_path(current_user), local: true, html: { class: 'new-category-form' }) do |form| %>
+    <%= form_with(model: @category, url: user_categories_path(current_user), local: true, html: { id: 'new-category-save-btn', class: 'new-category-form' }) do |form| %>
       <div class="field name-field">
         <%= form.label :name %> :
         <%= form.text_field :name %>
@@ -11,10 +11,6 @@
       <div class="field icon-field">
         <%= form.label :icon %> :
         <%= form.file_field :icon %>
-      </div>
-    
-      <div class="actions new-cat-action">
-        <%= form.submit "Save", class: 'save-action-btn' %>
       </div>
     <% end %>
   </div>

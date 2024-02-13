@@ -7,7 +7,7 @@ header.auth {
   padding-top: 4%;
 }
 
-main {
+main.auth {
   height: 80vh;
   flex-direction: column;
   justify-content: flex-start;
@@ -71,6 +71,7 @@ div.actions-links {
   padding: 16px;
   border-left: none;
   border-right: none;
+  font-size: 16px;
 }
 
 .name {
@@ -113,3 +114,10 @@ div.actions-links {
 .logout-button:hover {
   background-color: #3778c2;
 }
+
+.signup-submit,
+.login-submit {
+  display: none;
+}
+
+/* NB: confirmation, designed with login */

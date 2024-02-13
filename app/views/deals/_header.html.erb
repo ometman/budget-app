@@ -1,10 +1,12 @@
 <header class="categories">
 <div class="menu-title-search">
+<%= link_to user_categories_path(current_user) do %>
   <span class="material-symbols-outlined">
-    menu
+    arrow_back
   </span>
+<% end %>
   <div class="header-title">
-    <h1>Categories</h1>
+    <h1>Transactions</h1>
   </div>
   <span class="material-symbols-outlined">
     search
@@ -15,12 +17,3 @@
   <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
 </div>
 </header>
-<main class="categories">
-<div class="categories-container">
-<%= render 'form' %>
-</div>
-<div class="category-actions">
-<%= link_to "SAVE", 'javascript:void(0)', onclick: 'getElementById("new-category-save-btn").submit();', class: 'new-category-btn' %>
-</div>
-</main>
-

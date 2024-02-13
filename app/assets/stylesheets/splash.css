@@ -7,10 +7,11 @@ header.splash {
 }
 
 main.splash {
+  display: flex;
   height: 80vh;
-  flex-direction: row;
   justify-content: center;
   color: #434b54;
+  background-color: #fff;
 }
 
 .home-action-btns {
