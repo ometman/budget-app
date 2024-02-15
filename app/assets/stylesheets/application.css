@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:opsz@6..12&display=swap');
-@import "font-awesome";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -170,4 +169,14 @@ footer {
   padding: 2px;
   color: #ff0000;
   width: 200px; 
+}
+
+.notice,
+.alert {
+  margin: 10px auto;
+  text-align: center;
+  padding: 2px;
+  color: #ff0000;
+  width: 200px; 
+  font-size: 14px;
 }
