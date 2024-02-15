@@ -11,7 +11,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = current_user.categories.find(params[:id])
+    # @category = Category.find(params[:id])
     if params[:oldest]
       @deals = @category.deals.order(created_at: :asc)
     else

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 # Defines the root path route ("/")
   root "splash#index"
   get '/categories/create', to: 'categories#create'
+  get '/deals', to: 'deals#index', as: :deals
+  get '/deals/new', to: 'deals#new'
+  get '/deals/create', to: 'deals#create'
+  get '/deals/destroy', to: 'deals#destroy'
   get '/categories', to: 'categories#index', as: :categories
   get '/categories/most_recent', to: 'categories#most_recent', as: :most_recent_categories
   get '/categories/oldest', to: 'categories#oldest', as: :oldest_categories
