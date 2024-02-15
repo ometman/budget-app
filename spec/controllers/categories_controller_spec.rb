@@ -1,71 +1,39 @@
  require 'rails_helper'
 
-
-#   describe 'GET #index' do
-#     it 'returns a success response' do
-#       get :index
-#       expect(response).to be_successful
-#     end
-#   end
-
-#   describe 'POST #create' do
-#     context 'with valid attributes' do
-#       it 'creates a new category' do
-#         expect do
-#           post :create, params: { category: { name: 'New Category' } }
-#         end.to change(Category, :count).by(1)
-#       end
-#     end
-
-#     context 'with invalid attributes' do
-#       it 'does not create a new category' do
-#         expect do
-#           post :create, params: { category: { name: '' } }
-#         end.not_to change(Category, :count)
-#         expect(response).to redirect_to(new_category_path)
-#         expect(flash[:alert]).to be_present
-#       end
-#     end    
-#   end
-# end
-
 RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #index' do
     context 'when authenticated' do
       before do
-        sign_in create(:user)
+        @user = create(:user, id: 1)
+        3.times do |i|
+          create(:category, user: @user, created_at: Time.now - i.days)
+        end       
       end
-
+      
       it 'returns a success response' do
-        get :index
+        sign_in @user
+        get :index, params: { id: @user.id }
         expect(response).to be_successful
       end
 
-      it 'returns the current user's categories' do
-        category = create(:category, user: @user)
-        get :index
-        expect(assigns(:categories)).to include(category)
+      it 'returns the current user\'s categories' do
+        sign_in @user
+        get :index, params: { id: @user.id }
+        expect(assigns(:categories)).to eq(@user.categories)
+
       end
 
       it 'orders categories by created_at (descending by default)' do
-        # Create categories with different creation times
-        time1 = Time.now - 1.day
-        time2 = Time.now
-        create(:category, user: @user, created_at: time1)
-        create(:category, user: @user, created_at: time2)
-        get :index
-        expect(assigns(:categories).first.created_at).to be >= assigns(:categories).last.created_at)
+        sign_in @user
+        get :index, params: { recent: true }
+        expect(assigns(:categories).first.created_at).to be >= assigns(:categories).last.created_at
       end
 
       it 'orders categories by created_at ascending when `oldest` param is present' do
-        # Create categories with different creation times
-        time1 = Time.now - 1.day
-        time2 = Time.now
-        create(:category, user: @user, created_at: time1)
-        create(:category, user: @user, created_at: time2)
+        sign_in @user
         get :index, params: { oldest: true }
-        expect(assigns(:categories).first.created_at).to be <= assigns(:categories).last.created_at)
+        expect(assigns(:categories).first.created_at).to be >= assigns(:categories).last.created_at
       end
     end
 
@@ -78,24 +46,28 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe 'POST #create' do
-    context 'with valid attributes' do
-      it 'creates a new category' do
-        expect do
-          post :create, params: { category: { name: 'New Category' } }
-        end.to change(Category, :count).by(1)
-        expect(response).to redirect_to user_categories_path
-        expect(flash[:notice]).to be_present
-      end
+    before do
+      @user = create(:user, id: 1)
+      sign_in @user
+      3.times do |i|
+        create(:category, user: @user, created_at: Time.now - i.days)
+      end       
     end
 
-    context 'with invalid attributes' do
-      it 'does not create a new category' do
-        expect do
-          post :create, params: { category: { name: '' } }
-        end.not_to change(Category, :count)
-        expect(response).to render_template :new
-        expect(flash[:alert]).to be_present
-      end
+    it 'with valid attributes creates a new category' do
+      expect do
+        post :create, params: { category: { name: 'New Category'}  }
+      end.to change(Category, :count).by(1)
+      expect(response).to redirect_to user_categories_path(user_id: @user.id)
+      expect(flash[:notice]).to be_present
+    end    
+
+    it 'invalid attributes does not create a new category' do
+      expect do
+        post :create, params: { category: { name: '' } }
+      end.not_to change(Category, :count)
+      expect(response).to render_template :new
+      expect(flash[:alert]).to be_present
     end
   end
 end

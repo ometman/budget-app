@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[index show new create edit update destroy]
+  # before_action :set_category, only: %i[index show new create edit update destroy]
 
   def index
     @categories = current_user.categories
-    @categories = if params[:oldest]
-                    @categories.order(created_at: :asc)
-                  else
-                    @categories.order(created_at: :desc)
-                  end
+    if params[:oldest]
+      @categories = @categories.order(created_at: :asc)
+    else
+      @categories.order(created_at: :desc)
+    end
   end
 
   def show
@@ -28,11 +28,13 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.build(category_params)
     if @category.save
-      redirect_to user_categories_path, notice: 'Category was successfully created.'
+      redirect_to user_categories_path(current_user), notice: 'Category was successfully created.'
     else
-      redirect_to new_category_path, alert: 'Category creation failed.'
+      flash.now[:alert] = 'Category creation failed.'
+      render :new
     end
   end
+  
 
   def edit; end
 
@@ -51,9 +53,9 @@ class CategoriesController < ApplicationController
 
   private
 
-  def set_category
-    @category = current_user.categories.find(params[:id])
-  end
+  # def set_category
+  #   @category = current_user.categories.find(params[:id])
+  # end
 
   def category_params
     params.require(:category).permit(:name, :icon)

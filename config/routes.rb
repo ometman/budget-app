@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
 
-  Rails.application.routes.draw do
-    resources :users, only: [:index, :show, :destroy] do
-      resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-        resources :deals, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-      end
+  resources :users, only: [:index, :show, :create, :destroy] do
+    resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :deals, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     end
   end
 
-  
+
 # Defines the root path route ("/")
   root "splash#index"
+  get '/categories/create', to: 'categories#create'
   get '/categories', to: 'categories#index', as: :categories
   get '/categories/most_recent', to: 'categories#most_recent', as: :most_recent_categories
   get '/categories/oldest', to: 'categories#oldest', as: :oldest_categories
