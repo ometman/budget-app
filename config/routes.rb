@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   Rails.application.routes.draw do
-    resources :users do
+    resources :users, only: [:index, :show, :destroy] do
       resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
         resources :deals, only: [:index, :show, :new, :create, :edit, :update, :destroy]
       end

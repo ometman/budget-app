@@ -10,7 +10,7 @@ module Budget
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
-
+  
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
@@ -25,7 +25,9 @@ module Budget
     # config.eager_load_paths << Rails.root.join("extras")
     # config/application.rb
 
-config.secret_key_base = Rails.application.credentials.secret_key_base
+    config.secret_key_base = Rails.application.credentials.secret_key_base
+    config.middleware.use Rack::Sendfile
+    config.middleware.use Warden::Manager
 
   end
 end

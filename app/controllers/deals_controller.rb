@@ -1,5 +1,4 @@
 class DealsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_category
   before_action :set_deal, only: %i[show edit update destroy]
 
