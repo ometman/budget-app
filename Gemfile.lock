@@ -319,7 +319,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   cancancan
-  capybara
+  capybara (~> 3.35, >= 3.35.3)
   debug
   devise
   diff-lcs (~> 1.5)
