@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # Defines the root path route ("/")
+  root "splash#index"
+
   devise_for :users, path: 'auth', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
   } do
     
   end
+  
   resources :users do
     resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :deals, only: [:index, :show, :new, :create, :edit, :update, :destroy]
@@ -17,8 +21,7 @@ Rails.application.routes.draw do
   end
 
 
-# Defines the root path route ("/")
-  root "splash#index"
+
   get '/categories/create', to: 'categories#create'
   get '/deals', to: 'deals#index', as: :deals
   get '/deals/new', to: 'deals#new'

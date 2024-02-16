@@ -17,8 +17,7 @@
           <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
       </div>
     else
-      <%= button_to 'Login', new_user_session_path, method: :get, class: 'header-btn' %> or
-
+      <%= button_to 'Login', new_user_session_path, method: :get, class: 'header-btn' %>
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> <!-- Display alerts -->
