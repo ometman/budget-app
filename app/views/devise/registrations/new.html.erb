@@ -11,12 +11,17 @@
         <p class="welcome">Welcome!! Register to use</p>
     <% end %>
     <% if user_signed_in? %>
-    <p>Hello, <%= current_user.name %>!</p>
-    <div class="header-btns">
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
-        <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
-    </div>
+      <p>Hello, <%= current_user.name %>!</p>
+      <div class="header-btns">
+          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
+          <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
+      </div>
+    else
+      <%= button_to 'Login', new_user_session_path, method: :get, class: 'header-btn' %> or
+
     <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> <!-- Display alerts -->
   </div>
   <div class="login-actions">
     <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("signup-form").submit();', class: 'signup-btn-text' %>

@@ -173,10 +173,9 @@ footer {
 
 .notice,
 .alert {
-  margin: 10px auto;
   text-align: center;
   padding: 2px;
-  color: #ff0000;
-  width: 200px; 
+  color: #5fb523;
+  width: 100%; 
   font-size: 14px;
 }

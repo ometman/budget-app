@@ -12,10 +12,11 @@ RSpec.feature 'Resend confirmation instructions', type: :feature do
     fill_in 'Email', with: user.email
 
     # Click the "Resend confirmation instructions" button
-    click_button 'Resend confirmation instructions'
-
+    click_link('Next')
+    execute_script("document.getElementById('login-form').submit();")
     # Expectations: Check for success flash message or any other indication of success
-    expect(page).to have_text('You will receive an email with
-    instructions for how to confirm your email address in a few minutes.')
+    expect(page).to have_text('confirm your email address')
+    
+    expect(page).to have_current_path(new_user_session_path)
   end
 end
