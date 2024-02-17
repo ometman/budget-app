@@ -121,3 +121,8 @@ div.actions-links {
 }
 
 /* NB: confirmation, designed with login */
+
+.devise-shared-links {
+ margin-left: 20px;
+ font-size: 14px;
+}

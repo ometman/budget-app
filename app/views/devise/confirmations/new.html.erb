@@ -7,8 +7,11 @@
   <% end %>
   <div class="header-title">
     <h1>Resend confirmation instructions</h1>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      
+        <p class="notice"><%= notice %></p>
+      
+        <p class="alert"><%= alert %></p>
+   
   </div>
   <div class="login-actions">
     <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("confirmation-form").submit();', class: 'signup-btn-text' %>
@@ -19,16 +22,15 @@
   <div class="signup-container">
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { id: 'confirmation-form', class: 'signup-container-form' }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-
       <div class="field">
         <%= f.label :email, class: "signup-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email to resend confirmation link', class: 'signup-input email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
       </div>
 
       <%= f.submit class: 'signup-submit' %> <!-- Hidden submit button -->
     <% end %>
   </div>
+  <div class="devise-shared-links">
+    <%= render "devise/shared/links" %>
+  </div>
 </main>
-
-
-
