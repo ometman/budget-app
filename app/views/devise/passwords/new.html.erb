@@ -1,16 +1,36 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<header class="auth">
+  <div class="menu-title-search">
+  <%= link_to root_path do %>
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  <% end %>
+  <div class="header-title">
+    <h1>Forgotten Password</h1>
+  </div>
+  <div class="login-actions">
+    <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("password-forgotten-form").submit();', class: 'signup-btn-text' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+</header>
+<main class="auth">
+  <div class="signup-container">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, html: { id: 'password-forgotten-form', class: 'signup-container-form' }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :email, class: "signup-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email to send password instructions', class: 'signup-input email' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit class: 'signup-submit' %> <!-- Hidden submit button -->
+      </div>
+    <% end %>
+  </div>
+  <div class="devise-shared-links">
+      <%= render "devise/shared/links" %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+</main>

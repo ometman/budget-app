@@ -1,3 +1,26 @@
-<%= render 'header' %>
+<header class="categories">
+<div class="menu-title-search">
+  <span class="material-symbols-outlined">
+    menu
+  </span>
+  <div class="header-title">
+    <h1>Categories</h1>
+  </div>
+  <span class="material-symbols-outlined">
+    search
+  </span>
+</div>
+<div class="header-cat-links">
+  <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 
+  <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
+</div>
+</header>
+<main class="categories">
+<div class="categories-container">
 <%= render 'form' %>
+</div>
+<div class="category-actions">
+  <%= link_to "SAVE", 'javascript:void(0)', onclick: 'getElementById("new-category-save-btn").submit();', class: 'new-category-btn' %>
+</div>
+</main>
 

@@ -1,7 +1,7 @@
 <main class="transactions">
-<h2 class="transactions-heading"> Add a New Transaction </h2>
+  <h2 class="transactions-heading"> Add a New Transaction </h2>
   <div class="transsactions-form-container">
-    <%= form_with(model: [@category, @deal], url: user_category_deals_path(current_user, @category), local: true, html: { class: 'new-deal-form' }) do |form| %>
+    <%= form_with(model: [@category, @deal], url: user_category_deals_path(current_user, @category), local: true, html: { id: 'new-transaction-save-btn', class: 'new-deal-form' }) do |form| %>
       <div class="field name-field">
         <%= form.label :name %>:
         <%= form.text_field :name %>
@@ -19,12 +19,10 @@
         </p>
       </div>
 
-
-      <div class="new-cat-action">
-        <%= form.submit "Save", class: "save-action-btn" %>
-      </div>
     <% end %>
   </div>
-<%= link_to "Back to Transactions", user_category_path(current_user, @category) %>
-
+  <%= link_to "Back to Transactions", user_category_path(current_user, @category) %>
+<div class="category-actions">
+<%= link_to "SAVE", 'javascript:void(0)', onclick: 'getElementById("new-transaction-save-btn").submit();', class: 'new-category-btn' %>
+</div>
 </main>

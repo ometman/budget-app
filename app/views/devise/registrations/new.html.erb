@@ -1,44 +1,58 @@
 <header class="auth">
-  <div class="main-header-col">
-    <h1>Ometman Budget App</h1>
-    <p>Welcome!! Login or Register to use</p>
+  <div class="menu-title-search">
+  <%= link_to root_path do %>
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  <% end %>
+  <div class="header-title">
+    <h1>REGISTER</h1>
+    <% unless user_signed_in? %>
+        <p class="welcome">Welcome!! Register to use</p>
+    <% end %>
+    <% if user_signed_in? %>
+      <p>Hello, <%= current_user.name %>!</p>
+      <div class="header-btns">
+          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
+          <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
+      </div>
+    else
+      <%= button_to 'Login', new_user_session_path, method: :get, class: 'header-btn' %>
+    <% end %>
+  </div>
+  <div class="login-actions">
+    <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("signup-form").submit();', class: 'signup-btn-text' %>
   </div>
 </header>
 <main class="auth">
-<h2 class="signup-heading">Sign up</h2>
   <div class="signup-container">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-container-form' }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: 'signup-form', class: 'signup-container-form' }) do |f| %>
 
-      <div class="field signup-field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, class: 'signup-input' %>
+      <div class="field">
+        <%= f.label :name, class: "signup-label" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name here", class: 'signup-input name' %>
       </div>
 
-      <div class="field signup-field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email", class: 'signup-input' %>
+      <div class="field">
+        <%= f.label :email, class: "signup-label" %>
+        <%= f.email_field :email, autocomplete: "email", autofocus: true, placeholder: "Email here", class: 'signup-input email' %>
       </div>
 
-      <div class="field signup-field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'signup-input' %>
+      <div class="field">
+        <%= f.label :password, class: "signup-label" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password here' + (@minimum_password_length ? " (#{@minimum_password_length} characters minimum)" : ""), class: 'signup-input password' %>
       </div>
 
-      <div class="field signup-field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'signup-input' %>
+      <div class="field">
+        <%= f.label :password_confirmation, class: "signup-label" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: 'signup-input password' %>
       </div>
-
-      <div class="actions signup-actions">
-        <%= f.submit "Sign up", class: 'signup-button' %>
-      </div>
-    <% end %>
+      <%= f.submit class: 'signup-submit' %> <!-- Hidden submit button -->
+    <% end %>      
   </div>
-  <div class="actions-links">
+  <div class="devise-shared-links">
     <%= render "devise/shared/links" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
 </main>

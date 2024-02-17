@@ -32,6 +32,12 @@ main.transactions {
   font-weight: bold;
 }
 
+h2.transactions-heading {
+  padding-top: 4%;
+  font-size: 1.1rem;
+  align-self: center;
+}
+
 /* Categories Container */
 .categories-container {
   width: 100%;
@@ -49,7 +55,7 @@ main.transactions {
   padding-right: 10px;
 }
 
-.category-container {
+.transactions-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,21 +90,22 @@ main.transactions {
 }
 
 .new-category-btn {
-  background-color: #93abc7;
-  border: none;
+  background-color: #5fb523;
   color: white;
-  padding: 6px 16px;
+  padding: 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 15px 2px;
   cursor: pointer;
+  border: 1px solid #fff;
   border-radius: 4px;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .new-category-btn:hover {
-  background-color: #3778c2;
+  background-color: #51ab13;
 }
 
 .no-category-msg {
@@ -135,6 +142,7 @@ main.transactions {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: center;
 }
 
 .field input[type="number"],
@@ -158,6 +166,6 @@ p.cat-label {
 
 .transaction-scroll {
   overflow-y: auto;
-  height: 200px;
+  height: 300px;
   padding-right: 10px;
 }

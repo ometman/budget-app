@@ -1,10 +1,14 @@
 <header class="categories">
 <div class="menu-title-search">
-  <i class="fas fa-bars"></i>
+  <span class="material-symbols-outlined">
+    menu
+  </span>
   <div class="header-title">
-    <h1>Transactions</h1>
+    <h1>Categories</h1>
   </div>
-  <i class="fas fa-search"></i>
+  <span class="material-symbols-outlined">
+    search
+  </span>
 </div>
 <div class="header-cat-links">
   <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 

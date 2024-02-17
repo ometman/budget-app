@@ -1,6 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'shoulda/matchers'
+require 'factory_bot_rails'
+require 'capybara/rspec'
+require 'database_cleaner'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -32,6 +35,10 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
@@ -70,5 +77,12 @@ RSpec.configure do |config|
       with.test_framework :rspec
       with.library :rails
     end
+  end
+
+  # Configure Capybara to use RSpec as the test framework
+  Capybara.configure do |config|
+    config.default_driver = :selenium_chrome # Use Selenium Chrome driver by default
+    config.server_port = 3000 # Adjust this if your Rails server runs on a different port
+    config.app_host = 'http://localhost:3000' # Adjust this based on your Rails server URL
   end
 end

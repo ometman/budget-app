@@ -1,4 +1,22 @@
-<%= render 'header' %>
+<header class="categories">
+<div class="menu-title-search">
+  <%= link_to user_categories_path(current_user) do %>
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  <% end %>
+  <div class="header-title">
+    <h1>Transactions</h1>
+  </div>
+  <span class="material-symbols-outlined">
+    search
+  </span>
+</div>
+<div class="header-cat-links">
+  <%= link_to 'Most recent', user_categories_path(current_user, recent: true) %> | 
+  <%= link_to 'Most oldest', user_categories_path(current_user, oldest: true) %>
+</div>
+</header>
 <main class="categories transaction">
   <div class="cat-total-info">
     <p class="total-text">Total Amount:</p>
@@ -19,11 +37,8 @@
       <% end %>
     </div>
   </ul>
-  <div class="category-actions">
-  <%= link_to "Add a New Transaction", new_user_category_deal_path(current_user, @category), class: 'new-category-btn' %>
-  </div>
   <%= link_to "Back to Categories", user_categories_path(current_user), class: "back-link" %>
-  <div class="scan-btn-container">
-    <%= button_to 'SCAN', '#', class: 'scan-button', onclick: 'location.reload(); return false;' %>
+  <div class="category-actions">
+   <%= link_to "Add a New Transaction", new_user_category_deal_path(current_user, @category), class: 'new-category-btn' %>
   </div>
 </main>

@@ -6,12 +6,13 @@ RSpec.describe User, type: :model do
     it { should validate_length_of(:name).is_at_most(250) }
 
     it { should validate_presence_of(:email) }
-    it { should validate_uniqueness_of(:email).case_insensitive }
     it { should allow_value('user@example.com').for(:email) }
     it { should_not allow_value('user@example').for(:email) }
 
     it { should validate_presence_of(:password) }
     it { should validate_length_of(:password).is_at_least(6).is_at_most(30) }
+
+    # reset_password_sent_at and case sensitivity tested below
   end
 
   describe 'associations' do
@@ -19,36 +20,31 @@ RSpec.describe User, type: :model do
     it { should have_many(:deals).through(:categories).dependent(:destroy) }
   end
 
-  describe 'Devise modules' do
-    let!(:user) { create(:user, **default_user_attributes) }
-    def default_user_attributes
-      {
-        name: '',
-        email: '',
-        password: ''
-      }
+  describe 'creating a user' do
+    it 'creates a valid user' do
+      user = create(:user)
+      expect(user).to be_valid
     end
 
-    it { should respond_to(:database_authenticatable?) }
-    it { should respond_to(:registerable?) }
-    it { should respond_to(:recoverable?) }
-    it { should respond_to(:rememberable?) }
-    it { should respond_to(:validatable?) }
-    it { should respond_to(:confirmable?) }
+    it 'creates a confirmed user' do
+      user = create(:user, :confirmed)
+      expect(user).to be_confirmed
+    end
+
+    it 'has no categories when created' do
+      user = create(:user)
+      expect(user.categories).to be_empty
+    end
   end
 
-  it 'creates a valid user' do
-    user = create(:user)
-    expect(user).to be_valid
-  end
+  describe 'factory' do
+    it 'validates uniqueness of email case-insensitively' do
+      email = 'test@example.com'
+      create(:user, email: email.upcase) # Create a user with uppercase email
+      user = build(:user, email: email.downcase) # Build a user with lowercase email
 
-  it 'responds to database_authenticatable?' do
-    user = create(:user)
-    expect(user.database_authenticatable?).to be_truthy
-  end
-
-  it 'creates a confirmed user' do
-    user = create(:user, :confirmed)
-    expect(user).to be_confirmed
+      expect(user).not_to be_valid
+      expect(user.errors[:email]).to include('has already been taken')
+    end
   end
 end

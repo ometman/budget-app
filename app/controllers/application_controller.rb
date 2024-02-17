@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   # check_authorization unless: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -17,7 +17,17 @@ class ApplicationController < ActionController::Base
 
   # path after sign out
   def after_sign_out_path_for(_resource_or_scope)
-    root_path # Redirect to home page after sign out
+    root_path # Redirect to root
+  end
+
+  # path after registration
+  def after_sign_up_path_for(_resource)
+    new_user_session_path # Redirect to login
+  end
+
+  # path after confirmation
+  def after_confirmation_path_for(_resource)
+    new_user_session_path # Redirect to login
   end
 
   protected
