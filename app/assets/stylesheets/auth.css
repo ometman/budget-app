@@ -49,10 +49,9 @@ div.actions-links {
 }
 
 /* log in and logout buttons */
-.login-input
-.signup-input {
+.login-input .signup-input {
   width: 100%;
-  padding: 16px;;
+  padding: 16px;
   border: none;
   font-size: 16px;
   color: #f3f3f3;
@@ -123,6 +122,6 @@ div.actions-links {
 /* NB: confirmation, designed with login */
 
 .devise-shared-links {
- margin-left: 20px;
- font-size: 14px;
+  margin-left: 20px;
+  font-size: 14px;
 }

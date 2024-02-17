@@ -128,7 +128,7 @@ footer {
   text-align: center;
 }
 
-.fas.fa-search {
+/* .fas.fa-search {
   font-size: 24px;
   color: #fff;
 }
@@ -141,7 +141,7 @@ footer {
 .fas fa-angle-left {
   font-size: 48px;
   color: #fff;
-}
+} */
 
 .material-symbols-outlined {
   font-size: 28px;
@@ -158,7 +158,7 @@ footer {
 }
 
 .flash-notice {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -167,15 +167,15 @@ footer {
   margin: 10px auto;
   text-align: center;
   padding: 2px;
-  color: #ff0000;
-  width: 200px; 
+  color: #f00;
+  width: 200px;
 }
 
 .notice,
 .alert {
   text-align: center;
   padding: 2px;
-  color: #ff0000;
-  width: 100%; 
+  color: #f00;
+  width: 100%;
   font-size: 14px;
 }
