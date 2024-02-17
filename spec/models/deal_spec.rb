@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Deal, type: :model do
   let(:user) { create(:user) }
-  let(:category) { create(:category, user: user) }
+  let(:category) { create(:category, user:) }
 
   describe 'associations' do
     it { should belong_to(:user).class_name('User').with_foreign_key('author_id') }
@@ -17,7 +17,7 @@ RSpec.describe Deal, type: :model do
 
   describe 'creation' do
     context 'with valid attributes' do
-      let(:deal) { build(:deal, name: 'Test Deal', amount: 50, user: user, category: category) }
+      let(:deal) { build(:deal, name: 'Test Deal', amount: 50, user:, category:) }
 
       it 'is valid' do
         expect(deal).to be_valid
@@ -25,24 +25,24 @@ RSpec.describe Deal, type: :model do
     end
 
     context 'with invalid attributes nameless' do
-      let!(:deal) { build(:deal, name: '', amount: 50, user: user, category: category) }
+      let!(:deal) { build(:deal, name: '', amount: 50, user:, category:) }
       it 'is not valid without a name' do
         expect(deal).not_to be_valid
         expect(deal.errors[:name]).to include("can't be blank")
       end
     end
-    
+
     context 'with invalid attributes no amount' do
-      let!(:deal) { build(:deal, name: 'Test Deal', amount: '', user: user, category: category) }
+      let!(:deal) { build(:deal, name: 'Test Deal', amount: '', user:, category:) }
       it 'is not valid without an amount' do
         expect(deal).not_to be_valid
         expect(deal.errors[:amount]).to include("can't be blank")
       end
     end
-      
+
     context 'with invalid attributes negative amount' do
       it 'is not valid with a negative amount' do
-        deal = build(:deal, name: 'Test Deal', amount: -10, user: user, category: category)
+        deal = build(:deal, name: 'Test Deal', amount: -10, user:, category:)
         expect(deal).not_to be_valid
         expect(deal.errors[:amount]).to include('must be greater than or equal to 0')
       end

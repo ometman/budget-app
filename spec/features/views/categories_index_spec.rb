@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'Categories page', js: true do
-  
   scenario 'New user has no categories' do
     @user = create(:user, id: 99, email: 'user@example.com', password: 'password')
 
@@ -24,11 +23,11 @@ feature 'Categories page', js: true do
     visit '/auth/login'
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
-    
+
     execute_script("document.getElementById('login-form').submit();")
 
-   # Create a category associated with the user
-   category = create(:category, user_id: @user.id)
+    # Create a category associated with the user
+    category = create(:category, user_id: @user.id)
 
     within('.categories-container') do
       expect(page).to have_selector('div.category-container', count: 1)
@@ -36,6 +35,6 @@ feature 'Categories page', js: true do
 
     expect(page).to have_selector('h2.cat-name', text: category.name)
     expect(page).to have_selector('p.cat-date', text: category.created_at)
-    expect(page).to have_selector('span.cat-total-amt', text: category.deals.sum(:amount))  
+    expect(page).to have_selector('span.cat-total-amt', text: category.deals.sum(:amount))
   end
 end

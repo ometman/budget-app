@@ -17,7 +17,7 @@ RSpec.describe DealsController, type: :controller do
 
     it 'orders deals by created_at ascending' do
       sign_in @user
-      deals = create_list(:deal, 5, category: @category)
+      create_list(:deal, 5, category: @category)
       get :index, params: { category_id: @category.id }
       expect(assigns(:deals).first.created_at).to be <= assigns(:deals).last.created_at
     end
@@ -63,19 +63,18 @@ RSpec.describe DealsController, type: :controller do
   end
 
   describe 'DESTROY #destroy' do
-  before do
-    @user = create(:user)
-    @category = create(:category, user: @user)
-    @deal = create(:deal, category: @category)
-  end
+    before do
+      @user = create(:user)
+      @category = create(:category, user: @user)
+      @deal = create(:deal, category: @category)
+    end
 
-  it 'destroys the deal and redirects' do
-    sign_in @user
-    expect do
-      delete :destroy, params: { category_id: @category.id, id: @deal.id }
-    end.to change(Deal, :count).by(-1)
-    expect(response).to redirect_to deals_path
+    it 'destroys the deal and redirects' do
+      sign_in @user
+      expect do
+        delete :destroy, params: { category_id: @category.id, id: @deal.id }
+      end.to change(Deal, :count).by(-1)
+      expect(response).to redirect_to deals_path
+    end
   end
-end
-
 end

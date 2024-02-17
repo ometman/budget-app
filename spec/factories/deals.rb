@@ -3,7 +3,7 @@ FactoryBot.define do
     sequence(:name) { |n| "Deal #{n}" }
     amount { rand(100..500) }
     association :user
-    association :category 
+    association :category
 
     trait :invalid do
       name { nil }

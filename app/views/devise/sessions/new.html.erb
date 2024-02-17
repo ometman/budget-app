@@ -17,8 +17,6 @@
         <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
     </div>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     </div>
     <div class="login-actions">
       <%= link_to "Next", 'javascript:void(0)', onclick: 'document.getElementById("login-form").submit();', class: 'login-btn-text' %>
@@ -51,5 +49,7 @@
   </div>
   <div class="devise-shared-links">
     <%= render "devise/shared/links" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
 <main>

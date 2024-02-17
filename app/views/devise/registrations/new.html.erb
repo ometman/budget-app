@@ -19,8 +19,6 @@
     else
       <%= button_to 'Login', new_user_session_path, method: :get, class: 'header-btn' %>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> <!-- Display alerts -->
   </div>
   <div class="login-actions">
     <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("signup-form").submit();', class: 'signup-btn-text' %>
@@ -54,5 +52,7 @@
   </div>
   <div class="devise-shared-links">
     <%= render "devise/shared/links" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
 </main>

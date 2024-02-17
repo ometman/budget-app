@@ -42,7 +42,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Categories Page' do
-
   scenario 'User can create a new category' do
     @user = create(:user, id: 99, email: 'user@example.com', password: 'password')
 
@@ -86,14 +85,15 @@ RSpec.feature 'Categories Page' do
     expect(page).to have_link('Back to Categories', href: user_categories_path(@user), class: 'back-link')
 
 
-      # Updated selector for SAVE button
+    # Updated selector for SAVE button
     within('.category-actions') do
       expect(page).to have_link('SAVE')
     end
 
     fill_in 'Name', with: 'Test Category'
-    attach_file('category_icon', Rails.root.join('spec', 'fixtures', 'images', 'test_icon.jpeg')) # Adjust path and data accordingly
-   
+    attach_file('category_icon', Rails.root.join('spec', 'fixtures',
+                                                 'images', 'test_icon.jpeg'))
+
     execute_script("document.getElementById('new-category-save-btn').submit();")
 
     expect(page).to have_current_path(user_categories_path(@user))

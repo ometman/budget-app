@@ -1,16 +1,15 @@
- require 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
-
   describe 'GET #index' do
     context 'when authenticated' do
       before do
         @user = create(:user, id: 1)
         3.times do |i|
           create(:category, user: @user, created_at: Time.now - i.days)
-        end       
+        end
       end
-      
+
       it 'returns a success response' do
         sign_in @user
         get :index, params: { id: @user.id }
@@ -21,7 +20,6 @@ RSpec.describe CategoriesController, type: :controller do
         sign_in @user
         get :index, params: { id: @user.id }
         expect(assigns(:categories)).to eq(@user.categories)
-
       end
 
       it 'orders categories by created_at (descending by default)' do
@@ -51,16 +49,16 @@ RSpec.describe CategoriesController, type: :controller do
       sign_in @user
       3.times do |i|
         create(:category, user: @user, created_at: Time.now - i.days)
-      end       
+      end
     end
 
     it 'with valid attributes creates a new category' do
       expect do
-        post :create, params: { category: { name: 'New Category'}  }
+        post :create, params: { category: { name: 'New Category' } }
       end.to change(Category, :count).by(1)
       expect(response).to redirect_to user_categories_path(user_id: @user.id)
       expect(flash[:notice]).to be_present
-    end    
+    end
 
     it 'invalid attributes does not create a new category' do
       expect do

@@ -13,7 +13,6 @@ RSpec.describe User, type: :model do
     it { should validate_length_of(:password).is_at_least(6).is_at_most(30) }
 
     # reset_password_sent_at and case sensitivity tested below
-
   end
 
   describe 'associations' do
@@ -49,4 +48,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-

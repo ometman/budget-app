@@ -7,8 +7,6 @@
   <% end %>
   <div class="header-title">
     <h1>Forgotten Password</h1>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
   </div>
   <div class="login-actions">
     <%= link_to "Next", 'javascript:void(0)', onclick: 'getElementById("password-forgotten-form").submit();', class: 'signup-btn-text' %>
@@ -33,4 +31,6 @@
   <div class="devise-shared-links">
       <%= render "devise/shared/links" %>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 </main>
