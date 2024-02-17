@@ -15,8 +15,7 @@ RSpec.feature 'Resend confirmation instructions', type: :feature do
     fill_in 'Email', with: 'user@example.com'
     execute_script("document.getElementById('confirmation-form').submit();")
 
-    expect(page).to have_content('You will receive an email
-    with instructions for how to confirm your email address in a few minutes.')
+    expect(page).to have_content('You will receive an email with instructions for how to confirm your email address in a few minutes.')
     expect(page).to have_current_path(new_user_session_path)
   end
 
