@@ -20,6 +20,7 @@ default: &default
   port: 5432
   username: postgres
   password: ometman
+  
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -70,6 +71,7 @@ test:
 # variable when you boot the app. For example:
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+DATABASE_URL='postgres://koyeb-adm:gBQJkR1H5Vty@ep-tight-forest-a2nlnzpd.eu-central-1.pg.koyeb.app/budgetdb'
 #
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
@@ -82,8 +84,13 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: budget_production
+#   username: postgres
+#   password: ometman
 production:
-  <<: *default
-  database: budget_production
-  username: postgres
-  password: ometman
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
