@@ -80,9 +80,9 @@ RSpec.configure do |config|
   end
 
   # Configure Capybara to use RSpec as the test framework
-  Capybara.configure do |config|
-    config.default_driver = :selenium_chrome # Use Selenium Chrome driver by default
-    config.server_port = 3000 # Adjust this if your Rails server runs on a different port
-    config.app_host = 'http://localhost:3000' # Adjust this based on your Rails server URL
+  Capybara.configure do |conf|
+    conf.default_driver = :selenium_chrome # Use Selenium Chrome driver by default
+    conf.server_port = 3000 # Adjust this if your Rails server runs on a different port
+    conf.app_host = 'http://localhost:3000' # Adjust this based on your Rails server URL
   end
 end

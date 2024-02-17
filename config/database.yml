@@ -86,4 +86,4 @@ production:
   <<: *default
   database: budget_production
   username: postgres
-  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  password: ometman
