@@ -20,8 +20,7 @@ Rails.application.routes.draw do
     end
   end
 
-
-
+  get '/', to: 'splash#index'
   get '/categories/create', to: 'categories#create'
   get '/deals', to: 'deals#index', as: :deals
   get '/deals/new', to: 'deals#new'
