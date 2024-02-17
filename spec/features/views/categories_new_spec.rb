@@ -38,7 +38,6 @@
 #   end
 # end
 
-
 require 'rails_helper'
 
 RSpec.feature 'Categories Page' do
@@ -83,7 +82,6 @@ RSpec.feature 'Categories Page' do
 
     # Check presence of Back to Categories link
     expect(page).to have_link('Back to Categories', href: user_categories_path(@user), class: 'back-link')
-
 
     # Updated selector for SAVE button
     within('.category-actions') do
