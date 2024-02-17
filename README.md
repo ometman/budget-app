@@ -184,7 +184,7 @@ You can deploy this project using:
 - GitHub Pages from a specific branch (e.g. main).
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
-  [https://... (Coming Soon)
+ [https://proper-rivalee-microverse-student.koyeb.app/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
