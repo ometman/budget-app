@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Login page' do
+feature 'Login page1' do
   scenario 'User visits login page' do
     visit new_user_session_path
 
@@ -33,7 +33,9 @@ feature 'Login page' do
     click_link('Next')
     expect(page).to have_content('Invalid Email or password')
   end
+end
 
+feature 'Login page2' do
   scenario 'with empty email and password, shows error messages' do
     visit '/auth/login'
 

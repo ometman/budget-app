@@ -26,8 +26,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   AllowedMethods: ['describe']
-  Max: 60
-
+  Max: 40
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -52,9 +51,6 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
-Lint/ShadowingOuterLocalVariable:
-  Exclude:
-    - 'spec/rails_helper.rb'
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
