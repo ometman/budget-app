@@ -4,15 +4,16 @@ Rails.application.routes.draw do
   root "splash#index"
 
   devise_for :users, path: 'auth', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    password: 'secret',
-    confirmation: 'verification',
-    unlock: 'unblock',
-    registration: 'register'
-  } do
-    
-  end
+  sign_in: 'login',
+  sign_out: 'logout',
+  password: 'secret',
+  confirmation: 'verification',
+  unlock: 'unblock',
+  registration: 'register'
+}, controllers: {
+  sessions: 'users/sessions' # custom sessions controller
+}
+
   
   resources :users do
     resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
