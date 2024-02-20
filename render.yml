@@ -13,7 +13,7 @@ services:
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
-      - key: DATABASE_URL
+      - key: postgres://ometman:rawrObwWNEXTRS2AKJ07KfiViZlHZmfV@dpg-cn9na68cmk4c73a13930-a.oregon-postgres.render.com/budget_pro
         fromDatabase:
           name: budgetdb
           property: connectionString

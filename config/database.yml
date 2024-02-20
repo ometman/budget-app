@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: budget_development
-  username: postgres
-  password: ometman
-  host: localhost
-  port: 5432
-  # url: <%= ENV['DATABASE_URL'] %>
+  # database: budget_development
+  # username: postgres
+  # password: ometman
+  # host: localhost
+  # port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
 
 # other configurations...
 
@@ -26,9 +26,9 @@ test:
 
 production:
   <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
-  database: budget_production
-  username: postgres
-  password: ometman
-  host: localhost
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: budget_production
+  # username: postgres
+  # password: ometman
+  # host: localhost
+  # port: 5432
