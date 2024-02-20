@@ -18,6 +18,7 @@ services:
           name: budgetdb
           property: connectionString
       - key: RAILS_MASTER_KEY
+      - key: SECRET_KEY_BASE
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
