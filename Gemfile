@@ -78,3 +78,4 @@ end
 
 gem 'rails-controller-testing'
 gem 'sass-rails'
+gem 'dotenv-rails'
