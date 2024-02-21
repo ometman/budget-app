@@ -76,6 +76,7 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
 end
 
+gem 'dotenv-rails'
+gem 'mail'
 gem 'rails-controller-testing'
 gem 'sass-rails'
-gem 'dotenv-rails'

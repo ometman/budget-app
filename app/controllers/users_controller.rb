@@ -17,6 +17,27 @@ class UsersController < ApplicationController
   #   end
   # end
 
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     flash[:notice] = "Registration successfully. An email for confirmation will be sent shortly."
+  #     redirect_to root_path
+  #   else
+  #     render 'new'
+  #   end
+  # end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      UserMailer.confirmation_email(@user).deliver_now
+      flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
+
   def show
     @user = User.find(params[:id])
     @categories = @user.categories
@@ -40,5 +61,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     raise ActionController::RoutingError, 'Not Found'
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation) # Adjust attributes as needed
   end
 end

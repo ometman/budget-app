@@ -1,28 +1,31 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  GET /resource/sign_up
-  def new
-    super
-  end
+  # GET /resource/sign_up
+
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to root_path, notice: 'User successfully registered.'
+  #   else
+  #     flash.now[:alert] = 'Registration failed. Please fix the errors below.'
+  #     render :new
+  #   end
+  # end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: 'User successfully registered.'
+      UserMailer.confirmation_email(@user).deliver_now
+      flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
+      redirect_to root_path
     else
-      flash.now[:alert] = 'Registration failed. Please fix the errors below.'
-      render :new
+      render 'new'
     end
   end
 
-  POST /resource
-  def create
-    super
-  end
+  # POST /resource
 
   # GET /resource/edit
   # def edit
@@ -44,9 +47,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # in to be expired now. This is useful if the user wants to
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
-  def cancel
-    super
-  end
 
   protected
 
@@ -61,12 +61,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    super(resource)
-  end
 
   # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource)
-    super(resource)
-  end
 end
