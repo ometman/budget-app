@@ -139,7 +139,7 @@ bash > npm install
 bash > bundle install
 ````
  Run Tests <a name="run-tests"></a>
-  To run tests run the following command in your terminal
+  To run tests run the following command in your terminal (make sure the sever is not running)
     ```
     Rspec
     ```
