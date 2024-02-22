@@ -10,6 +10,7 @@ development:
   password: ometman
   host: localhost
   port: 5432
+  # url: <%= ENV['DATABASE_URL'] %>
 
 # other configurations...
 
@@ -23,12 +24,11 @@ test:
 
 # other configurations...
 
-# DATABASE_URL='postgres://koyeb-adm:gBQJkR1H5Vty@ep-tight-forest-a2nlnzpd.eu-central-1.pg.koyeb.app/budgetdb'
-
-
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
-  port: 5432
+  # database: budget_production
+  # username: postgres
+  # password: ometman
+  # host: localhost
+  # port: 5432

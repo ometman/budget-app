@@ -58,6 +58,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  # Use the test database configuration from database.yml
+  config.database_configuration_file = Rails.root.join('config', 'database.yml')
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true

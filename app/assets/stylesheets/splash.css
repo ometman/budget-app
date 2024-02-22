@@ -81,3 +81,8 @@ p.welcome {
   color: #fff;
   border: none;
 }
+
+img.logo-class {
+  width: 140px;
+  height: 160px;
+}

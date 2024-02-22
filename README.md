@@ -204,6 +204,7 @@ You can deploy this project using:
 - **Adding a help information**
 - **Adding contact information**
 - **Full desktop version**
+- **Menu Implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
