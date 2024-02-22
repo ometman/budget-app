@@ -185,6 +185,9 @@ You can deploy this project using:
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
  [https://proper-rivalee-microverse-student.koyeb.app/]
+- Currently, use the following login details: 
+  Email: ometman.dev.mail@gmail.com
+  pwd:  asdfgh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
