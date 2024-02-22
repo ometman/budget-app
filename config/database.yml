@@ -26,7 +26,7 @@ test:
 
 production:
   <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   # database: budget_production
   # username: postgres
   # password: ometman

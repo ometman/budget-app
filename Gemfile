@@ -78,7 +78,7 @@ end
 
 gem 'dotenv-rails'
 gem 'mail'
+gem 'nokogiri', '1.16.2'
+gem 'rack', '3.0.9'
 gem 'rails-controller-testing'
 gem 'sass-rails'
-gem 'nokogiri', '1.16.2'
-gem 'rack', '3.0.8'

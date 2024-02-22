@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
 
     existing_user = User.find_by(email: @user.email)
-  
+
     if existing_user
       flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
       render 'new'
@@ -66,10 +66,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-    # path after registration
-    def after_sign_up_path_for(_resource)
-      new_user_session_path # Redirect to login
-    end
+  # path after registration
+  def after_sign_up_path_for(_resource)
+    new_user_session_path # Redirect to login
+  end
 
   # The path used after sign up for inactive accounts.
 end
