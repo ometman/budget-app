@@ -29,14 +29,14 @@ Rails.application.routes.draw do
   get '/categories', to: 'categories#index', as: :categories
   get '/categories/most_recent', to: 'categories#most_recent', as: :most_recent_categories
   get '/categories/oldest', to: 'categories#oldest', as: :oldest_categories
+  get '/uploads/:filename', to: 'uploads#show'
 
- 
+  get '/confirm_email/:confirmation_token', to: 'users/confirmations#confirm_email', as: 'confirm_email'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-  
   
 end
