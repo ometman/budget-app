@@ -131,7 +131,6 @@ GEM
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
     ffi (1.16.3)
-    ffi (1.16.3-x64-mingw-ucrt)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -187,7 +186,6 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
-    pg (1.5.4-x64-mingw-ucrt)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -360,7 +358,6 @@ DEPENDENCIES
   nokogiri (= 1.16.2)
   pg (~> 1.1)
   puma (>= 5.0)
-  rack (= 3.0.9)
   rails (~> 7.1.2)
   rails-controller-testing
   rspec-rails (~> 6.1.0)
@@ -376,7 +373,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.5.5

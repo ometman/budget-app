@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     if @user.save
-      UserMailer.confirmation_email(@user).deliver_now
+      # UserMailer.confirmation_email(@user).deliver_now
       flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
       redirect_to root_path
     else
@@ -67,7 +67,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   # path after registration
-  def after_sign_up_path_for(_resource)
+  def after_sign_up_path_for(_resource_or_scope)
     new_user_session_path # Redirect to login
   end
 

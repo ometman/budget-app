@@ -138,6 +138,11 @@ bash > npm install
 ```
 bash > bundle install
 ````
+
+Make sure to Run `gem install mailcatcher` for sending confirmation email.
+Then: Run `mailcatcher` to start mailcatcher server for mailing in devise.
+([Follow mailcatcher instructions] https://mailcatcher.me/)
+
  Run Tests <a name="run-tests"></a>
   To run tests run the following command in your terminal
     ```

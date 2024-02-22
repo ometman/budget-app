@@ -7,18 +7,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      UserMailer.confirmation_email(@user).deliver_now
-      flash[:notice] = 'Registration successful. A confirmation email will be sent shortly.'
-      redirect_to root_path
-    else
-      flash.now[:alert] = @user.errors.full_messages.join(', ')
-      render 'new'
-    end
-  end
-
   def show
     @user = User.find(params[:id])
     @categories = @user.categories
