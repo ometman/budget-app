@@ -4,20 +4,20 @@ RSpec.describe CategoriesController, type: :controller do
   describe 'GET #index' do
     context 'when authenticated' do
       before do
-        @user = create(:user, id: 1)
+        @user = create(:user)
+        sign_in @user
         3.times do |i|
           create(:category, user: @user, created_at: Time.now - i.days)
         end
       end
 
       it 'returns a success response' do
-        sign_in @user
         get :index, params: { id: @user.id }
         expect(response).to be_successful
       end
 
       it 'returns the current user\'s categories' do
-        sign_in @user
+        sign_in @user # check this later
         get :index, params: { id: @user.id }
         expect(assigns(:categories)).to eq(@user.categories)
       end
@@ -45,7 +45,7 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'POST #create' do
     before do
-      @user = create(:user, id: 1)
+      @user = create(:user)
       sign_in @user
       3.times do |i|
         create(:category, user: @user, created_at: Time.now - i.days)
