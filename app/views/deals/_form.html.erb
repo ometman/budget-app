@@ -15,7 +15,7 @@
       <div class="category-selector">
         <p class="cat-label"><%= form.label :category_ids, "Categories" %></p>
         <p>
-        <%= form.collection_select(:category_id, current_user.categories, :id, :name, { include_hidden: false }, { multiple: false }) %>
+        <%= form.collection_select(:category_ids, current_user.categories, :id, :name, { include_hidden: false }, { multiple: true }) %>
         </p>
       </div>
 

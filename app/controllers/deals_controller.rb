@@ -13,11 +13,18 @@ class DealsController < ApplicationController
   end
 
   def create
-    @deal = @category.deals.build(deal_params)
-    @deal.user = current_user
-    if @deal.save
-      redirect_to user_category_deals_path(current_user, @category), notice: 'Deal was successfully created.'
+    @deals = []
+    deal_params[:category_ids].each do |category_id|
+      deal = Category.find(category_id).deals.build(deal_params.except(:category_ids))
+      deal.user = current_user
+
+      @deals << deal if deal.save
+    end
+  
+    if @deals.any?
+      redirect_to user_category_deals_path(current_user, @category), notice: 'Deals were successfully created.'
     else
+      flash.now[:alert] = 'Failed to create deals.'
       render :new
     end
   end
@@ -48,6 +55,6 @@ class DealsController < ApplicationController
   end
 
   def deal_params
-    params.require(:deal).permit(:name, :amount, :category_id)
+    params.require(:deal).permit(:name, :amount, category_ids: [])
   end
 end
