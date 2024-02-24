@@ -40,8 +40,11 @@ class DealsController < ApplicationController
   end
 
   def destroy
-    @deal.destroy
-    redirect_to user_category_deals_path, notice: 'Deal was successfully destroyed.'
+    if @deal.destroy
+      redirect_to user_category_deals_path, notice: 'Deal was successfully destroyed.'
+    else
+      redirect_to user_category_deals_path, alert: 'Failed to destroy category.'
+    end
   end
 
   private
