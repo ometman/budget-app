@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.2'
+ruby '3.3.0'
 
 gem 'cancancan'
 gem 'devise'
@@ -79,6 +79,6 @@ end
 gem 'dotenv-rails'
 gem 'mail'
 gem 'nokogiri', '1.16.2'
-gem 'rack', '3.0.9'
+gem 'rack', '3.0.9.1'
 gem 'rails-controller-testing'
 gem 'sass-rails'

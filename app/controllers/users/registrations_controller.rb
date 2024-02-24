@@ -1,6 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
@@ -8,21 +7,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
+
   def create
     @user = User.new(user_params)
 
-    existing_user = User.find_by(email: @user.email)
-
-    if existing_user
+    if @user.email.present? && User.where(email: @user.email.downcase).exists?
       flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
       render 'new'
       return
     end
 
     if @user.save
-      UserMailer.confirmation_email(@user).deliver_now
+      @user.send_confirmation_instructions
       flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
-      redirect_to root_path
+      redirect_to new_user_session_path
     else
       render 'new'
     end
@@ -60,16 +58,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:name, :email, :password)
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
-
   # The path used after sign up.
   # path after registration
-  def after_sign_up_path_for(_resource)
+  def after_sign_up_path_for(_resource_or_scope)
     new_user_session_path # Redirect to login
   end
-
-  # The path used after sign up for inactive accounts.
 end

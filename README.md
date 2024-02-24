@@ -35,7 +35,7 @@
 # 📖 Ometman Budget App <a name="about-project"></a>
 
 **A Demo Video: Introduction to this Project**
---[Budget Demo](https://www.loom.com/share/7c5642f53ab6429cbbdd520937e72812?sid=3b5006c2-5d4e-4eb2-bcf0-ad366796f2f3)
+--[Budget Demo](https://www.loom.com/share/c1d1603d72b5452db65d92c9b93cb25d?sid=f270bc76-7a85-40aa-aa18-30dc1ba73e33)
 
 > The project is mobile-oriented designs for different screen sizes.
 
@@ -138,6 +138,11 @@ bash > npm install
 ```
 bash > bundle install
 ````
+
+Make sure to Run `gem install mailcatcher` for sending confirmation email.
+Then: Run `mailcatcher` to start mailcatcher server for mailing in devise.
+([Follow mailcatcher instructions] https://mailcatcher.me/)
+
  Run Tests <a name="run-tests"></a>
   To run tests run the following command in your terminal (make sure the sever is not running)
     ```

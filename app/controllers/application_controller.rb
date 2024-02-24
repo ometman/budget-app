@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   # path after registration
-  def after_sign_up_path_for(_resource)
+  def after_sign_up_path_for(_resource_or_scope)
     new_user_session_path # Redirect to login
   end
 

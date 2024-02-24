@@ -1,6 +1,4 @@
 class CategoriesController < ApplicationController
-  # before_action :set_category, only: %i[index show new create edit update destroy]
-
   def index
     @categories = current_user.categories
     if params[:oldest]
@@ -12,7 +10,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = current_user.categories.find(params[:id])
-    # @category = Category.find(params[:id])
     if params[:oldest]
       @deals = @category.deals.order(created_at: :asc)
     else
@@ -47,15 +44,14 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    redirect_to categories_url, notice: 'Category was successfully destroyed.'
+    if @category.destroy
+      redirect_to user_categories_path, notice: 'Category was successfully destroyed.'
+    else
+      redirect_to user_categories_path, alert: 'Failed to destroy category.'
+    end
   end
 
   private
-
-  # def set_category
-  #   @category = current_user.categories.find(params[:id])
-  # end
 
   def category_params
     params.require(:category).permit(:name, :icon)
