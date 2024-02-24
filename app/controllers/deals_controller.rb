@@ -20,7 +20,7 @@ class DealsController < ApplicationController
 
       @deals << deal if deal.save
     end
-  
+
     if @deals.any?
       redirect_to user_category_deals_path(current_user, @category), notice: 'Deals were successfully created.'
     else

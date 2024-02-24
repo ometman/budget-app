@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
     @categories = current_user.categories
     if params[:oldest]
@@ -51,7 +50,7 @@ class CategoriesController < ApplicationController
       redirect_to user_categories_path, alert: 'Failed to destroy category.'
     end
   end
-  
+
 
   private
 

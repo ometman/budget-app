@@ -4,7 +4,7 @@ describe UsersController, type: :controller do
   describe 'GET #index' do
     before do
       @user1 = create(:user, id: 1)
-      @user2 = create(:user,  id: 2)
+      @user2 = create(:user, id: 2)
     end
 
     it 'when authenticated redirects to user categories path' do

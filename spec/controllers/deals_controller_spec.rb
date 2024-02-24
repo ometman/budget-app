@@ -47,16 +47,19 @@ RSpec.describe DealsController, type: :controller do
       it 'creates a new deal and redirects' do
         sign_in @user
         expect do
-          post :create, params: { user_id: @user.id, category_id: @category.id, deal: { name: 'Test Deal', amount: 100, category_ids: [@category.id] } }
+          post :create,
+               params: { user_id: @user.id, category_id: @category.id,
+                         deal: { name: 'Test Deal', amount: 100, category_ids: [@category.id] } }
         end.to change(Deal, :count).by(1)
         expect(response).to redirect_to user_category_deals_path(@user, @category)
       end
     end
-  
+
     context 'with invalid params' do
       it 'renders the new template' do
         sign_in @user
-        post :create, params: { user_id: @user.id, category_id: @category.id, deal: { name: '', category_ids: [@category.id] } }
+        post :create,
+             params: { user_id: @user.id, category_id: @category.id, deal: { name: '', category_ids: [@category.id] } }
         expect(response).to render_template :new
       end
     end
