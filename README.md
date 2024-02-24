@@ -179,17 +179,20 @@ Setup the database to run the project locally:
   Or start PgAdmin
 
   - Make sure 'config/database.yml' is configured appropriately.
-  - Create the database specified in the above file and migrate
+  - On the feature branch, Create the database specified in the above file and migrate
+    ```
+    git checkout feature
+    ```
      ```
-      bundle exec rails db:create
+    bundle exec rails db:create
     ```
     ```
-      bundle exec rails db:migrate
+    bundle exec rails db:migrate
     ```
 
 - Now launch the app with the following command to start the rails server:
     ```
-      bundle exec rails s
+    bundle exec rails s
     ```
  
 - Voila! Now, go to the browser and enter: localhost:3000 or 127.0.0.1:3000
