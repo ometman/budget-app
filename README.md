@@ -139,12 +139,8 @@ bash > npm install
 bash > bundle install
 ````
 
-Make sure to Run `gem install mailcatcher` for sending confirmation email.
-Then: Run `mailcatcher` to start mailcatcher server for mailing in devise.
-([Follow mailcatcher instructions] https://mailcatcher.me/)
-
- Run Tests <a name="run-tests"></a>
-  To run tests run the following command in your terminal (make sure the sever is not running)
+Run Tests <a name="run-tests"></a>
+  To run tests run the following command in your terminal (without the localhost server running)
     ```
     Rspec
     ```
@@ -190,9 +186,6 @@ You can deploy this project using:
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
  [https://proper-rivalee-microverse-student.koyeb.app/]
-- Currently, use the following login details: 
-  Email: ometman.dev.mail@gmail.com
-  pwd:  asdfgh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
