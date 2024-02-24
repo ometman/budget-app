@@ -127,8 +127,15 @@ In order to run this project you need:
   ```
   git clone https://github.com/ometman/budget-app.git
   ```
+  In the `budge-app` directory where you cloned the app
+  At the prompt, type 
+  ```
+  git checkout feature
+  ```
 
 ### Install Packages and Run Tests <a name="install"></a>
+ 
+ In the app's directory (budget-app), again at the prompt:
 
  Run `npm install` and `bundle install` to set up the required packages and gems.
 
@@ -139,13 +146,13 @@ bash > npm install
 bash > bundle install
 ````
 
-Run Tests <a name="run-tests"></a>
+Now, you can Run Tests (Rspec and Linters) <a name="run-tests"></a>
   To run tests run the following command in your terminal (without the localhost server running)
     ```
     Rspec
     ```
 
- Run Linters
+  Run Linters
   - You can also check linter errors
   - Make sure Rubocop and stylelint are installed
      Install Rubocop, run the following command:
@@ -163,7 +170,7 @@ Run Tests <a name="run-tests"></a>
 
 ### Usage <a name="usage"></a>
 
-To run the project locally, execute the following command:
+Setup the database to run the project locally:
 
 - Start and login to the database server (for Windows): 
   ```
@@ -171,10 +178,19 @@ To run the project locally, execute the following command:
   ```
   Or start PgAdmin
 
-- Launch the app with the following command to start the rails server:
-  ``
-  rails s
- ``
+  - Make sure 'config/database.yml' is configured appropriately.
+  - Create the database specified in the above file and migrate
+     ```
+      bundle exec rails db:create
+    ```
+    ```
+      bundle exec rails db:migrate
+    ```
+
+- Now launch the app with the following command to start the rails server:
+    ```
+      bundle exec rails s
+    ```
  
 - Voila! Now, go to the browser and enter: localhost:3000 or 127.0.0.1:3000
 
