@@ -95,8 +95,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -127,7 +125,10 @@ In order to run this project you need:
   ```
   git clone https://github.com/ometman/budget-app.git
   ```
-  In the `budge-app` directory where you cloned the app
+  ```
+  cd budget-app
+  ```
+  In the `budget-app` directory where you cloned the app
   At the prompt, type 
   ```
   git checkout feature
