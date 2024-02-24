@@ -1,0 +1,32 @@
+<%= render 'header' %>
+<main class="categories">
+  <div class="credit-info">
+    <p class="gift-text">Total Amount</p>
+    <p class="gift-amt"><%= Deal.where(author_id: current_user.id).sum(:amount) %>
+    </p>
+  </div>
+  <div class="categories-container">
+    <div class="category-scroll">
+      <% if @categories.present? %>
+        <% @categories.each do |category| %>
+          <%= link_to user_category_path(current_user, category) do %>
+            <div class="category-container">
+            <%= image_tag category.icon_url if category.icon_data? %>
+            <div class="cat-name-date">
+                <h2 class="cat-name"><%= category.name %></h2>
+                <p class="cat-date"><%= category.created_at %></p>
+              </div>
+              <span class="cat-total-amt"><%= category.deals.sum(:amount) %></span>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p class="no-resource-msg">No categories available</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="category-actions">
+    <%= link_to "Add a new category", new_user_category_path(current_user), class: 'new-category-btn' %>
+  </div>
+</main>
+

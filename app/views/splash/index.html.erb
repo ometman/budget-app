@@ -1,0 +1,22 @@
+<header class="splash">
+<div class="main-header-col">
+    <h1>Ometman Budget App</h1>
+    <% unless user_signed_in? %>
+        <p class="welcome">Welcome!! Login or Register to use</p>
+    <% end %>
+    <% if user_signed_in? %>
+    <p>Hello, <%= current_user.name %>!</p>
+    <div class="header-btns">
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header-btn' %> or
+        <%= button_to 'Return', user_categories_path(current_user), method: :get, class: 'header-btn' %>
+    </div>
+    <% end %>
+</div>
+</header>
+<main class="splash">
+    <div class="home-action-btns">
+        <%= image_tag 'budget_logo.png', class: 'logo-class' %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'home-signup-btn' %> 
+        <%= link_to 'Login', new_user_session_path, class: 'home-login-btn' %>
+    </div>
+</main>

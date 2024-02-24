@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:opsz@6..12&display=swap');
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin and padding reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* List reset */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Form elements reset */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* Anchor reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+.container {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  background: #e8e9e8;
+  border: 2px solid #000;
+}
+
+header {
+  background-color: #3778c2;
+  color: #fff;
+  padding: 16px 20px;
+}
+
+.main-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+nav {
+  background-color: #555;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+main {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* .fas.fa-search {
+  font-size: 24px;
+  color: #fff;
+}
+
+.fas.fa-bars {
+  font-size: 24px;
+  color: #fff;
+}
+
+.fas fa-angle-left {
+  font-size: 48px;
+  color: #fff;
+} */
+
+.material-symbols-outlined {
+  font-size: 28px;
+}
+
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flash-error {
+  background-color: #f44336;
+  color: white;
+}
+
+.flash-notice {
+  background-color: #4caf50;
+  color: white;
+}
+
+.h-notice,
+.h-alert {
+  margin: 10px auto;
+  text-align: center;
+  padding: 2px;
+  color: #f00;
+  width: 200px;
+}
+
+.notice,
+.alert {
+  text-align: center;
+  padding: 2px;
+  color: #f00;
+  width: 100%;
+  font-size: 14px;
+}

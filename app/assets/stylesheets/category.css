@@ -1,0 +1,255 @@
+header.categories {
+  height: 13vh;
+}
+
+.menu-title-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f3f3f3;
+  height: 87vh;
+}
+
+/* Gift Info */
+.credit-info,
+.cat-total-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.gift-text .total-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gift-amt,
+.total-amt {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Categories Container */
+.categories-container {
+  width: 100%;
+  overflow-y: auto;
+  height: 64vh;
+}
+
+.category-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 20px;
+  background-color: #f3f3f3;
+  gap: 20px;
+  padding-right: 10px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.cat-name-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cat-name {
+  font-size: 18px;
+}
+
+.cat-date {
+  font-size: 10px;
+}
+
+.category-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.no-resource-msg {
+  text-align: center;
+  font-size: 16px;
+  color: red;
+}
+
+.header-cat-links {
+  text-align: right;
+  margin-right: 0;
+  margin-top: 12px;
+}
+
+/* new category form */
+
+h2.categories-heading,
+h2.transactions-heading {
+  padding-top: 4%;
+  font-size: 1.1rem;
+}
+
+.categories-form-container,
+.transactions-form-container {
+  display: block;
+  margin: 0 auto;
+}
+
+.new-category-form,
+.new-deal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  margin: 5% auto;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #434b54;
+  text-decoration: none;
+}
+
+.field.name-field label,
+.field.icon-field label,
+.field.amt-field label,
+.field.cat-field label {
+  font-weight: bold;
+}
+
+input[type="file"] {
+  width: 80%;
+}
+
+.field.name-field input[type="text"] {
+  width: 80%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.new-cat-action {
+  align-self: center;
+}
+
+.save-action-btn {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.save-action-btn:hover {
+  background-color: #3778c2;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #434b54;
+}
+
+/* category transactions */
+
+h2.cat-transact-heading {
+  padding-top: 4%;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 4%;
+}
+
+ul.cat-transact-container {
+  margin-top: 20px;
+  max-width: 580px;
+  height: 50vh;
+  width: 90%;
+  background-color: #fff;
+  padding: 1% 2%;
+  border: 1px solid #5fb523;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cat-transact-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid #5fb523;
+  padding: 10px 0;
+}
+
+.cat-transact-list:nth-child(1) {
+  border-top: 1px solid #5fb523;
+}
+
+.cat-transact-list:last-child {
+  border-bottom: none;
+}
+
+.category-actions {
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+  background-color: #5fb523;
+  text-align: center;
+  padding: 2%;
+}
+
+button.new-category-btn {
+  background-color: #5fb523;
+  border: 1px solid #fff;
+  color: white;
+  padding: 3%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button.new-category-btn:hover {
+  background-color: #4ca112;
+}

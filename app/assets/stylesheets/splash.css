@@ -1,0 +1,88 @@
+header.splash {
+  height: 20vh;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.splash {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  color: #434b54;
+  background-color: #fff;
+}
+
+.home-action-btns {
+  gap: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+}
+
+a.home-signup-btn,
+a.home-login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f3f3f3;
+  font-size: 18px;
+  width: 80%;
+}
+
+a.home-signup-btn:hover,
+a.home-login-btn:hover {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.home-signup-btn,
+.home-login-btn {
+  background-color: #f3f3f3;
+  border: none;
+  height: 12vh;
+  margin: 0 auto;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+p.welcome {
+  font-size: 12px;
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-btn {
+  background-color: #3778c2;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #fff;
+}
+
+.header-btn:hover {
+  background-color: #5fb523;
+  color: #fff;
+  border: none;
+}
+
+img.logo-class {
+  width: 140px;
+  height: 160px;
+}
