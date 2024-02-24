@@ -76,7 +76,6 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
 end
 
-
 gem 'dotenv-rails'
 gem 'mail'
 gem 'nokogiri', '1.16.2'
