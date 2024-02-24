@@ -41,7 +41,7 @@ class DealsController < ApplicationController
 
   def destroy
     @deal.destroy
-    redirect_to deals_url, notice: 'Deal was successfully destroyed.'
+    redirect_to user_category_deals_path, notice: 'Deal was successfully destroyed.'
   end
 
   private

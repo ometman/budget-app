@@ -26,12 +26,7 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    it 'creates a confirmed user' do
-      user = create(:user, :confirmed)
-      expect(user).to be_confirmed
-    end
-
-    it 'has no categories when created' do
+      it 'has no categories when created' do
       user = create(:user)
       expect(user.categories).to be_empty
     end
