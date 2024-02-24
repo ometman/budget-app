@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 }
   
   resources :users do
-  resources :categories, only: [:index, :show, :new, :create, :destroy] do
-  resources :deals, only: [:index, :show, :new, :create, :destroy]
+    resources :categories do [:index, :show, :new, :create, :destroy]
+      resources :deals, only: [:index, :show, :new, :create, :destroy]
     end
   end
 

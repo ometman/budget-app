@@ -19,7 +19,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     if @user.save
-      # UserMailer.confirmation_email(@user).deliver_now
       flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
       redirect_to root_path
     else
