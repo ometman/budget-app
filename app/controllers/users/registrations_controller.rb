@@ -7,24 +7,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  
-def create
-  @user = User.new(user_params)
 
-  if @user.email.present? && User.where(email: @user.email.downcase).exists?
-    flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
-    render 'new'
-    return
-  end
+  def create
+    @user = User.new(user_params)
 
-  if @user.save
-    @user.send_confirmation_instructions
-    flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
-    redirect_to new_user_session_path
-  else
-    render 'new'
+    if @user.email.present? && User.where(email: @user.email.downcase).exists?
+      flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
+      render 'new'
+      return
+    end
+
+    if @user.save
+      @user.send_confirmation_instructions
+      flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
+      redirect_to new_user_session_path
+    else
+      render 'new'
+    end
   end
-end
 
   # GET /resource/edit
   # def edit
