@@ -7,24 +7,45 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create
-    @user = User.new(user_params)
+  
+def create
+  @user = User.new(user_params)
 
-    existing_user = User.find_by(email: @user.email)
-
-    if existing_user
-      flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
-      render 'new'
-      return
-    end
-
-    if @user.save
-      flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
-      redirect_to root_path
-    else
-      render 'new'
-    end
+  if @user.email.present? && User.where(email: @user.email.downcase).exists?
+    flash.now[:alert] = 'Email already exists. Sign in or use a different email.'
+    render 'new'
+    return
   end
+
+  if @user.save
+    @user.send_confirmation_instructions
+    flash[:notice] = 'You have successfully registered. An email for confirmation will be sent shortly.'
+    redirect_to new_user_session_path
+  else
+    render 'new'
+  end
+end
+
+  # GET /resource/edit
+  # def edit
+  #   super
+  # end
+
+  # PUT /resource
+  # def update
+  #   super
+  # end
+
+  # DELETE /resource
+  # def destroy
+  #   super
+  # end
+
+  # GET /resource/cancel
+  # Forces the session data which is usually expired after sign
+  # in to be expired now. This is useful if the user wants to
+  # cancel oauth signing in/up in the middle of the process,
+  # removing all OAuth session data.
 
   protected
 
